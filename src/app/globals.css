@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0ea5e9;   /* Sky 500 */
+  --color-brand-cyan: #7dd3fc;   /* Sky 300 - Más suave */
+  --color-brand-yellow: #ffea00;
+  --color-brand-dark: #0c4a6e;   /* Sky 950 - Un azul marino muy oscuro pero menos negro */
+  
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0c4a6e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c4a6e;
+    --foreground: #f0f9ff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Utilities */
+.text-gradient {
+  background: linear-gradient(to right, #0ea5e9, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  @apply bg-brand-yellow text-brand-dark font-bold py-3 px-8 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2;
+}
+
+.section-padding {
+  @apply py-20 px-6 max-w-7xl mx-auto;
+}
