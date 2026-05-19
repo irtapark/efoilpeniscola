@@ -32,10 +32,10 @@ const Experience = () => {
             
             <div className="space-y-8 text-xl text-white/60 font-bold uppercase italic leading-tight mb-16">
               <p className="border-l-4 border-brand-cyan pl-6">
-                El eFoil no es surf, es el futuro. Una descarga de adrenalina pura frente al <span className="text-white">Castillo de Papa Luna</span>.
+                El eFoil lleva la esencia del surf a una nueva dimensión. Una descarga de adrenalina pura mientras levitas frente al <span className="text-white font-bold">Castillo de Papa Luna</span>.
               </p>
               <p className="pl-10">
-                La experiencia náutica más radical de Peñíscola te está esperando. Fly High Or Go Home.
+                La libertad total de surfear sin depender de las olas. Con nuestra tecnología eléctrica, el mar entero es tu terreno de juego.
               </p>
             </div>
 
