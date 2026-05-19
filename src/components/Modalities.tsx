@@ -79,15 +79,15 @@ const Modalities = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 max-w-[1500px] mx-auto">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-20 md:gap-6 max-w-[1500px] mx-auto relative z-10">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col ${
+              className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col w-full ${
                 plan.popular 
                   ? "bg-brand-cyan/20 border-brand-cyan md:h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)] z-20" 
                   : "bg-white/5 border-white/10 md:h-[600px] z-10"
