@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, ArrowRight } from "lucide-react";
+import { Zap } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
+    <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-brand-dark">
       {/* Background Compilation with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-transparent to-brand-dark z-10" />
@@ -48,32 +48,32 @@ const Hero = () => {
       </div>
 
       {/* Radical Content */}
-      <div className="relative z-20 text-center px-6 w-full max-w-7xl mx-auto">
+      <div className="relative z-20 text-center px-4 w-full max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring" }}
         >
-          <div className="inline-flex items-center gap-3 mb-6 bg-white/5 backdrop-blur-md px-6 py-2 border border-white/10 rounded-full">
-            <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse" />
-            <span className="text-white/60 font-black tracking-[0.3em] uppercase text-[10px] md:text-xs">
+          <div className="inline-flex items-center gap-2 mb-4 bg-white/5 backdrop-blur-md px-4 py-1.5 border border-white/10 rounded-full">
+            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse" />
+            <span className="text-white/60 font-black tracking-[0.2em] uppercase text-[9px] md:text-xs">
               {t.hero.badge}
             </span>
           </div>
           
-          <h1 className="text-7xl md:text-[12rem] font-black text-white leading-[0.75] uppercase italic tracking-tighter mb-12">
+          <h1 className="text-5xl md:text-[12rem] font-black text-white leading-[0.85] uppercase italic tracking-tighter mb-8">
             {t.hero.vuela} <br />
-            <span className="text-transparent stroke-text opacity-50">{t.hero.sobre}</span> <br />
+            <span className="text-transparent stroke-text opacity-40">{t.hero.sobre}</span> <br />
             <span className="text-brand-cyan">{t.hero.elMar}</span>
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-bold uppercase tracking-tight italic">
+          <p className="text-base md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto font-bold uppercase tracking-tight italic leading-snug">
             {t.hero.desc}
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <a href="tel:644026066" className="btn-radical text-2xl group">
-              <Zap size={24} fill="currentColor" />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            <a href="tel:644026066" className="btn-radical text-lg md:text-2xl group w-full md:w-auto">
+              <Zap size={20} className="md:w-6 md:h-6" fill="currentColor" />
               {t.hero.cta}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
             </a>
@@ -81,20 +81,20 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Modern Indicators */}
-      <div className="absolute bottom-12 left-12 z-20 flex gap-4">
+      {/* Indicators - Hidden on small mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-12 md:translate-x-0 z-20 flex gap-2">
         {videos.map((_, i) => (
           <div
             key={i}
             className={`h-1 transition-all duration-1000 ${
-              i === currentVideo ? "w-16 bg-brand-cyan" : "w-4 bg-white/20"
+              i === currentVideo ? "w-8 md:w-16 bg-brand-cyan" : "w-2 md:w-4 bg-white/20"
             }`}
           />
         ))}
       </div>
 
-      {/* Vertical Decorative Text */}
-      <div className="absolute right-0 top-0 h-full flex items-center pointer-events-none overflow-hidden pr-4 opacity-5">
+      {/* Decorative Text - Hidden on mobile */}
+      <div className="absolute right-0 top-0 h-full hidden md:flex items-center pointer-events-none overflow-hidden pr-4 opacity-5">
         <span className="text-[20rem] font-black uppercase italic vertical-text leading-none select-none">
           ACTION
         </span>

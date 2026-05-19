@@ -13,7 +13,7 @@ const Modalities = () => {
       price: "75€",
       duration: "1h 30min (1 Batería)",
       description: t.rates.solo.desc,
-      icon: <Wind size={44} />,
+      icon: <Wind size={32} className="md:w-11 md:h-11" />,
       features: [
         t.rates.solo.f1,
         t.rates.solo.f2,
@@ -29,7 +29,7 @@ const Modalities = () => {
       price: "50€",
       duration: "1h 30min (1 Batería)",
       description: t.rates.duo.desc,
-      icon: <Waves size={44} />,
+      icon: <Waves size={32} className="md:w-11 md:h-11" />,
       features: [
         t.rates.duo.f1,
         t.rates.duo.f2,
@@ -45,7 +45,7 @@ const Modalities = () => {
       price: "230€",
       duration: "4 Baterías Full",
       description: t.rates.pro.desc,
-      icon: <Gauge size={44} />,
+      icon: <Gauge size={32} className="md:w-11 md:h-11" />,
       features: [
         t.rates.pro.f1,
         t.rates.pro.f2,
@@ -59,67 +59,67 @@ const Modalities = () => {
   ];
 
   return (
-    <section id="tarifas" className="bg-brand-dark text-white overflow-hidden relative border-t-8 border-brand-cyan pb-40">
+    <section id="tarifas" className="bg-brand-dark text-white overflow-hidden relative border-t-4 md:border-t-8 border-brand-cyan pb-20 md:pb-40">
       {/* Radical Pattern */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #00d1ff 1px, transparent 1px), linear-gradient(-45deg, #00d1ff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+      <div className="absolute inset-0 opacity-[0.03] md:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #00d1ff 1px, transparent 1px), linear-gradient(-45deg, #00d1ff 1px, transparent 1px)', backgroundSize: '40px 40px md:60px 60px' }} />
 
       <div className="section-padding text-left relative z-10">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-12 md:mb-24"
         >
-          <h2 className="text-6xl md:text-[10rem] font-black mb-6 uppercase italic tracking-tighter leading-none">
-            {t.rates.title1} <br />
-            <span className="text-brand-cyan">{t.rates.title2}</span>
+          <h2 className="text-5xl md:text-[10rem] font-black mb-4 md:mb-6 uppercase italic tracking-tighter leading-none">
+            Choose Your <br />
+            <span className="text-brand-cyan">Weapon</span>
           </h2>
-          <p className="text-white/40 text-2xl max-w-xl font-black uppercase italic tracking-widest">
+          <p className="text-white/40 text-lg md:text-2xl max-w-xl font-black uppercase italic tracking-widest leading-tight">
             {t.rates.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-[1500px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1500px] mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col ${
+              className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col ${
                 plan.popular 
-                  ? "bg-brand-cyan/20 border-brand-cyan h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)]" 
-                  : "bg-white/5 border-white/10 h-[600px]"
+                  ? "bg-brand-cyan/20 border-brand-cyan min-h-[550px] md:h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)]" 
+                  : "bg-white/5 border-white/10 min-h-[500px] md:h-[600px]"
               }`}
             >
               {plan.popular && (
-                <span className="absolute top-0 right-0 bg-white text-brand-dark px-6 py-2 font-black uppercase italic tracking-widest text-xs">
+                <span className="absolute top-0 right-0 bg-white text-brand-dark px-4 md:px-6 py-1 md:py-2 font-black uppercase italic tracking-widest text-[9px] md:text-xs">
                   Most Radical Choice
                 </span>
               )}
 
-              <div className="mb-10 text-brand-cyan group-hover:text-brand-dark transition-colors duration-500">
+              <div className="mb-6 md:mb-10 text-brand-cyan group-hover:text-brand-dark transition-colors duration-500">
                 {plan.icon}
               </div>
 
-              <h3 className="text-4xl font-black mb-4 uppercase italic group-hover:text-brand-dark leading-tight">{plan.title}</h3>
+              <h3 className="text-2xl md:text-4xl font-black mb-2 md:mb-4 uppercase italic group-hover:text-brand-dark leading-tight">{plan.title}</h3>
               
-              <div className="flex items-baseline gap-2 mb-10">
-                <span className="text-8xl font-black tracking-tighter group-hover:text-brand-dark">{plan.price}</span>
+              <div className="flex items-baseline gap-2 mb-6 md:mb-10">
+                <span className="text-6xl md:text-8xl font-black tracking-tighter group-hover:text-brand-dark">{plan.price}</span>
                 {plan.title !== t.rates.pro.title && (
-                  <span className="text-2xl font-black opacity-30 uppercase group-hover:text-brand-dark/50">{t.rates.perPers}</span>
+                  <span className="text-lg md:text-2xl font-black opacity-30 uppercase group-hover:text-brand-dark/50">{t.rates.perPers}</span>
                 )}
               </div>
 
-              <p className="text-white/50 mb-12 text-xl font-bold uppercase italic leading-tight group-hover:text-brand-dark/80">
+              <p className="text-white/50 mb-8 md:mb-12 text-base md:text-xl font-bold uppercase italic leading-tight group-hover:text-brand-dark/80">
                 {plan.description}
               </p>
 
               <div className="mt-auto">
-                <ul className="space-y-4 mb-12 border-l-2 border-brand-cyan group-hover:border-brand-dark pl-8">
+                <ul className="space-y-2 md:space-y-4 mb-8 md:mb-12 border-l-2 border-brand-cyan group-hover:border-brand-dark pl-4 md:pl-8">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="text-xs font-black uppercase tracking-tighter group-hover:text-brand-dark">
+                    <li key={feature} className="text-[10px] md:text-xs font-black uppercase tracking-tighter group-hover:text-brand-dark">
                       {feature}
                     </li>
                   ))}
@@ -129,17 +129,17 @@ const Modalities = () => {
                   href={`https://wa.me/34644026066?text=Hello! I want to book: ${plan.title}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-7 font-black uppercase tracking-widest text-xl transition-all flex items-center justify-center gap-4 ${
+                  className={`w-full py-5 md:py-7 font-black uppercase tracking-widest text-base md:text-xl transition-all flex items-center justify-center gap-3 md:gap-4 ${
                     plan.popular 
                       ? "bg-white text-brand-dark hover:bg-brand-dark hover:text-white" 
                       : "bg-brand-cyan text-brand-dark hover:bg-white hover:text-brand-dark"
                   }`}
                 >
-                  <Zap size={24} fill="currentColor" />
+                  <Zap size={18} md:size={24} fill="currentColor" />
                   {plan.cta}
                 </a>
                 
-                <div className="text-[10px] font-black mt-6 opacity-20 uppercase tracking-[0.2em] group-hover:opacity-100 group-hover:text-brand-dark">
+                <div className="text-[8px] md:text-[10px] font-black mt-4 md:mt-6 opacity-20 uppercase tracking-[0.2em] group-hover:opacity-100 group-hover:text-brand-dark">
                    {plan.note} — {plan.duration}
                 </div>
               </div>
@@ -147,8 +147,8 @@ const Modalities = () => {
           ))}
         </div>
 
-        <div className="mt-20 text-left border-t border-white/5 pt-10">
-          <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] max-w-4xl leading-loose">
+        <div className="mt-16 md:mt-20 text-left border-t border-white/5 pt-8 md:pt-10">
+          <p className="text-[8px] md:text-[10px] text-white/20 uppercase tracking-[0.2em] md:tracking-[0.3em] max-w-4xl leading-relaxed md:leading-loose">
             {t.rates.legal}
           </p>
         </div>
