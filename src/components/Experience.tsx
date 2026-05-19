@@ -1,14 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Wind, Waves, Compass, Sliders, Gauge, Anchor, Ship } from "lucide-react";
+import { Zap, Wind, Waves, Sliders, Gauge, Anchor } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Experience = () => {
+  const { t } = useLanguage();
+
   const features = [
-    { icon: <Gauge className="text-brand-cyan" size={40} />, title: "Fly Zone", desc: "Dominamos la costa de Peñíscola desde el aire." },
-    { icon: <Wind className="text-brand-cyan" size={40} />, title: "Gravity Zero", desc: "Siente cómo el foil te eleva sobre el Mediterráneo." },
-    { icon: <Zap className="text-brand-cyan" size={40} />, title: "Electric Power", desc: "Sin ruidos, sin humos, solo energía pura." },
-    { icon: <Sliders className="text-brand-cyan" size={40} />, title: "Full Control", desc: "Tú manejas la potencia con el gatillo inalámbrico." },
+    { icon: <Gauge className="text-brand-cyan" size={40} />, title: t.experience.feat1, desc: t.experience.desc1 },
+    { icon: <Wind className="text-brand-cyan" size={40} />, title: t.experience.feat2, desc: t.experience.desc2 },
+    { icon: <Zap className="text-brand-cyan" size={40} />, title: t.experience.feat3, desc: t.experience.desc3 },
+    { icon: <Sliders className="text-brand-cyan" size={40} />, title: t.experience.feat4, desc: t.experience.desc4 },
   ];
 
   return (
@@ -25,17 +28,17 @@ const Experience = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-6xl md:text-9xl font-black mb-12 leading-[0.85] uppercase italic tracking-tighter">
-              Rompe <br />
-              <span className="text-brand-cyan">Las Reglas</span> <br />
-              Del Mar
+              {t.experience.title1} <br />
+              <span className="text-brand-cyan">{t.experience.title2}</span> <br />
+              {t.experience.title3}
             </h2>
             
             <div className="space-y-8 text-xl text-white/60 font-bold uppercase italic leading-tight mb-16">
               <p className="border-l-4 border-brand-cyan pl-6">
-                El eFoil lleva la esencia del surf a una nueva dimensión. Una descarga de adrenalina pura mientras levitas frente al <span className="text-white font-bold">Castillo de Papa Luna</span>.
+                {t.experience.p1}
               </p>
-              <p className="pl-10">
-                La libertad total de surfear sin depender de las olas. Con nuestra tecnología eléctrica, el mar entero es tu terreno de juego.
+              <p className="pl-10 text-white/40">
+                {t.experience.p2}
               </p>
             </div>
 
@@ -73,7 +76,7 @@ const Experience = () => {
               className="relative rounded-none shadow-2xl w-full h-[800px] object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-1000"
             />
             
-            <div className="absolute bottom-10 -left-10 bg-brand-cyan text-brand-dark p-10 font-black uppercase italic tracking-tighter text-4xl shadow-2xl -rotate-6">
+            <div className="absolute bottom-10 -left-10 bg-brand-cyan text-white p-10 font-black uppercase italic tracking-tighter text-4xl shadow-2xl -rotate-6">
               Live <br /> The <br /> Action
             </div>
 

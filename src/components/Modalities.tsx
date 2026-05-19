@@ -1,57 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Zap, Wind, Waves, Gauge } from "lucide-react";
+import { Zap, Wind, Waves, Gauge } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Modalities = () => {
+  const { t } = useLanguage();
+
   const plans = [
     {
-      title: "Solo Flight",
+      title: t.rates.solo.title,
       price: "75€",
       duration: "1h 30min (1 Batería)",
-      description: "¡Tú, la tabla y el mar! Un instructor solo para ti para que domines la Fly Zone en tiempo récord.",
+      description: t.rates.solo.desc,
       icon: <Wind size={44} />,
       features: [
-        "Private Coach",
-        "Gear Pro Incluido",
-        "Full Insurance",
-        "Insta-Ready Content",
+        t.rates.solo.f1,
+        t.rates.solo.f2,
+        t.rates.solo.f3,
+        t.rates.solo.f4,
       ],
-      cta: "Vuela Solo",
+      cta: t.rates.solo.cta,
       popular: false,
-      note: "PRECIO POR PERSONA"
+      note: t.rates.note
     },
     {
-      title: "Duo Session",
+      title: t.rates.duo.title,
       price: "50€",
       duration: "1h 30min (1 Batería)",
-      description: "¿Quién aguanta más arriba? Pique sano mientras levitáis frente al imponente castillo.",
+      description: t.rates.duo.desc,
       icon: <Waves size={44} />,
       features: [
-        "Shared Board",
-        "Doble Adrenalina",
-        "Competición Radical",
-        "Todo Incluido",
+        t.rates.duo.f1,
+        t.rates.duo.f2,
+        t.rates.duo.f3,
+        t.rates.duo.f4,
       ],
-      cta: "Vuelo Duo",
+      cta: t.rates.duo.cta,
       popular: true,
-      note: "PRECIO POR PERSONA"
+      note: t.rates.note
     },
     {
-      title: "Pro Pack 4",
+      title: t.rates.pro.title,
       price: "230€",
       duration: "4 Baterías Full",
-      description: "Para los que se han viciado de verdad. Conviértete en el dueño absoluto de la costa.",
+      description: t.rates.pro.desc,
       icon: <Gauge size={44} />,
       features: [
-        "4 Full Sessions",
-        "Solo para ti",
-        "Save 70€ Now",
-        "Master the Foil",
+        t.rates.pro.f1,
+        t.rates.pro.f2,
+        t.rates.pro.f3,
+        t.rates.pro.f4,
       ],
-      cta: "Go Pro",
+      cta: t.rates.pro.cta,
       popular: false,
-      note: "TU PACK NOMINAL"
+      note: t.rates.pro.note
     },
   ];
 
@@ -68,11 +71,11 @@ const Modalities = () => {
           className="mb-24"
         >
           <h2 className="text-6xl md:text-[10rem] font-black mb-6 uppercase italic tracking-tighter leading-none">
-            Choose Your <br />
-            <span className="text-brand-cyan">Weapon</span>
+            {t.rates.title1} <br />
+            <span className="text-brand-cyan">{t.rates.title2}</span>
           </h2>
           <p className="text-white/40 text-2xl max-w-xl font-black uppercase italic tracking-widest">
-            Sin rollos corporativos. Solo tú volando sobre el mediterráneo.
+            {t.rates.subtitle}
           </p>
         </motion.div>
 
@@ -104,8 +107,8 @@ const Modalities = () => {
               
               <div className="flex items-baseline gap-2 mb-10">
                 <span className="text-8xl font-black tracking-tighter group-hover:text-brand-dark">{plan.price}</span>
-                {plan.title !== "Pro Pack 4" && (
-                  <span className="text-2xl font-black opacity-30 uppercase group-hover:text-brand-dark/50">/ pers</span>
+                {plan.title !== t.rates.pro.title && (
+                  <span className="text-2xl font-black opacity-30 uppercase group-hover:text-brand-dark/50">{t.rates.perPers}</span>
                 )}
               </div>
 
@@ -123,7 +126,7 @@ const Modalities = () => {
                 </ul>
 
                 <a
-                  href={`https://wa.me/34644026066?text=Hola! Quiero reservar: ${plan.title}.`}
+                  href={`https://wa.me/34644026066?text=Hello! I want to book: ${plan.title}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-7 font-black uppercase tracking-widest text-xl transition-all flex items-center justify-center gap-4 ${
@@ -136,12 +139,18 @@ const Modalities = () => {
                   {plan.cta}
                 </a>
                 
-                <div className="text-[10px] font-black mt-6 opacity-20 uppercase tracking-[0.3em] group-hover:opacity-100 group-hover:text-brand-dark">
+                <div className="text-[10px] font-black mt-6 opacity-20 uppercase tracking-[0.2em] group-hover:opacity-100 group-hover:text-brand-dark">
                    {plan.note} — {plan.duration}
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-20 text-left border-t border-white/5 pt-10">
+          <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] max-w-4xl leading-loose">
+            {t.rates.legal}
+          </p>
         </div>
       </div>
     </section>

@@ -2,9 +2,9 @@
 
 @theme {
   --color-brand-dark: #001b2e;   /* Azul Marino Profundo */
-  --color-brand-cyan: #00d1ff;   /* Cian Eléctrico */
+  --color-brand-cyan: #0ea5e9;   /* Azul Cielo (Sky 500) - Más suave que el anterior */
   --color-brand-light: #f0faff;  /* Agua Cristalina / Espuma */
-  --color-brand-accent: #00d1ff; /* Sustituimos el amarillo por Cian para coherencia */
+  --color-brand-accent: #0ea5e9; 
   
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
@@ -31,7 +31,7 @@ body {
 
 /* Radical Nautical Utilities */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff, #00d1ff);
+  background: linear-gradient(135deg, #ffffff, #0ea5e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .btn-radical {
-  @apply relative overflow-hidden bg-brand-cyan text-brand-dark font-black py-5 px-12 uppercase italic tracking-tighter transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3;
+  @apply relative overflow-hidden bg-brand-cyan text-white font-black py-5 px-12 uppercase italic tracking-tighter transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
 

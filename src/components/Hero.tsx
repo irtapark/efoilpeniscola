@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, ArrowRight, MousePointer2 } from "lucide-react";
+import { Zap, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const videos = [
   "/assets/VID_20220717_123740.mp4",
@@ -14,6 +15,7 @@ const videos = [
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,33 +57,25 @@ const Hero = () => {
           <div className="inline-flex items-center gap-3 mb-6 bg-white/5 backdrop-blur-md px-6 py-2 border border-white/10 rounded-full">
             <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse" />
             <span className="text-white/60 font-black tracking-[0.3em] uppercase text-[10px] md:text-xs">
-              Peñíscola Nautical Experience
+              {t.hero.badge}
             </span>
           </div>
           
           <h1 className="text-7xl md:text-[12rem] font-black text-white leading-[0.75] uppercase italic tracking-tighter mb-12">
-            Vuela <br />
-            <span className="text-transparent stroke-text opacity-50">Sobre</span> <br />
-            <span className="text-brand-cyan">El Mar</span>
+            {t.hero.vuela} <br />
+            <span className="text-transparent stroke-text opacity-50">{t.hero.sobre}</span> <br />
+            <span className="text-brand-cyan">{t.hero.elMar}</span>
           </h1>
 
           <p className="text-lg md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-bold uppercase tracking-tight italic">
-            La perspectiva más radical del Castillo de Peñíscola. <br />
-            Sin ruidos. Sin olas. Solo adrenalina.
+            {t.hero.desc}
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <a href="tel:644026066" className="btn-radical text-2xl group">
               <Zap size={24} fill="currentColor" />
-              ¡Reserva YA!
+              {t.hero.cta}
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
-            </a>
-            
-            <a
-              href="#experiencia"
-              className="text-white font-black uppercase italic tracking-widest text-sm flex items-center gap-2 group hover:text-brand-cyan transition-colors"
-            >
-              Descubrir <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </motion.div>
