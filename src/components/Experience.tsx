@@ -1,74 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Wind, Waves, ShieldCheck, Ship, Anchor } from "lucide-react";
+import { Zap, Wind, Waves, Compass, Sliders, Gauge, Anchor, Ship } from "lucide-react";
 
 const Experience = () => {
   const features = [
-    { icon: <Zap className="text-brand-cyan" size={32} />, title: "Motor Eléctrico", desc: "Silencio total y cero emisiones." },
-    { icon: <Wind className="text-brand-cyan" size={32} />, title: "Vuelo Suave", desc: "Siente la libertad de levitar." },
-    { icon: <Waves className="text-brand-cyan" size={32} />, title: "Sobre las Olas", desc: "Sin impacto, fluye sobre el mar." },
-    { icon: <ShieldCheck className="text-brand-cyan" size={32} />, title: "Seguridad Pro", desc: "Casco con radio e instructores." },
+    { icon: <Gauge className="text-brand-cyan" size={40} />, title: "Fly Zone", desc: "Dominamos la costa de Peñíscola desde el aire." },
+    { icon: <Wind className="text-brand-cyan" size={40} />, title: "Gravity Zero", desc: "Siente cómo el foil te eleva sobre el Mediterráneo." },
+    { icon: <Zap className="text-brand-cyan" size={40} />, title: "Electric Power", desc: "Sin ruidos, sin humos, solo energía pura." },
+    { icon: <Sliders className="text-brand-cyan" size={40} />, title: "Full Control", desc: "Tú manejas la potencia con el gatillo inalámbrico." },
   ];
 
   return (
-    <section id="experiencia" className="bg-white text-brand-dark overflow-hidden relative">
-      {/* Decorative Icons */}
-      <Anchor className="absolute top-10 right-10 text-brand-blue/5 -rotate-12" size={120} />
-      <Ship className="absolute bottom-10 left-10 text-brand-blue/5 rotate-12" size={100} />
-
+    <section id="experiencia" className="bg-brand-dark text-white overflow-hidden relative border-t-8 border-brand-cyan">
+      {/* Radical Decorative Elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-cyan/5 -skew-x-12 translate-x-32 pointer-events-none" />
+      
       <div className="section-padding relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight uppercase italic">
-              Vuela sobre el mar <br />
-              <span className="text-brand-blue">en Peñíscola</span>
+            <h2 className="text-6xl md:text-9xl font-black mb-12 leading-[0.85] uppercase italic tracking-tighter">
+              Rompe <br />
+              <span className="text-brand-cyan">Las Reglas</span> <br />
+              Del Mar
             </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
-                Siente la libertad absoluta de volar sobre las aguas de Peñíscola. El eFoil es la actividad náutica definitiva para quienes buscan algo extraordinario.
+            
+            <div className="space-y-8 text-xl text-white/60 font-bold uppercase italic leading-tight mb-16">
+              <p className="border-l-4 border-brand-cyan pl-6">
+                El eFoil no es surf, es el futuro. Una descarga de adrenalina pura frente al <span className="text-white">Castillo de Papa Luna</span>.
               </p>
-              <p>
-                Contempla el <span className="font-bold text-brand-blue">Castillo de Papa Luna</span> desde una perspectiva privilegiada, levitando sobre el mar sin ruidos ni olas. Solo tú y el horizonte.
+              <p className="pl-10">
+                La experiencia náutica más radical de Peñíscola te está esperando. Fly High Or Go Home.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mt-12">
+            <div className="grid grid-cols-2 gap-12 mt-16">
               {features.map((f, i) => (
-                <div key={i} className="flex flex-col gap-2">
-                  {f.icon}
-                  <h4 className="font-bold">{f.title}</h4>
-                  <p className="text-sm text-gray-500">{f.desc}</p>
+                <div key={i} className="flex flex-col gap-5 group">
+                  <div className="bg-white/5 w-20 h-20 flex items-center justify-center rounded-none -skew-x-12 group-hover:bg-brand-cyan transition-colors duration-500 border border-white/10 group-hover:border-brand-cyan">
+                    <div className="group-hover:text-brand-dark transition-colors duration-500 skew-x-12">
+                      {f.icon}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-black uppercase italic tracking-tighter text-xl mb-2">{f.title}</h4>
+                    <p className="text-xs text-white/40 uppercase tracking-widest font-bold">{f.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 1.1, rotate: 5 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, type: "spring" }}
             className="relative"
           >
-            <div className="absolute -inset-4 bg-brand-cyan/20 rounded-2xl rotate-3 -z-10" />
+            {/* Radical Image Frame */}
+            <div className="absolute -inset-4 border-2 border-brand-cyan/20 -rotate-3" />
+            <div className="absolute -inset-4 border-2 border-white/5 rotate-2" />
+            
             <img
               src="/assets/IMG-20210629-WA0002.jpg"
-              alt="Vuela sobre el mar con eFoil"
-              className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
+              alt="Radical E-foil Peñíscola"
+              className="relative rounded-none shadow-2xl w-full h-[800px] object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-1000"
             />
-            <div className="absolute bottom-6 right-6 bg-brand-dark text-white p-6 rounded-xl shadow-xl max-w-xs">
-              <p className="text-sm font-medium italic">
-                "La forma más espectacular de ver Peñíscola desde el agua."
-              </p>
+            
+            <div className="absolute bottom-10 -left-10 bg-brand-cyan text-brand-dark p-10 font-black uppercase italic tracking-tighter text-4xl shadow-2xl -rotate-6">
+              Live <br /> The <br /> Action
+            </div>
+
+            <div className="absolute -top-10 -right-10 opacity-10">
+              <Anchor size={200} className="text-brand-cyan" />
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Background Big Text */}
+      <div className="absolute top-1/2 left-0 opacity-[0.03] pointer-events-none select-none overflow-hidden w-full text-center">
+        <span className="text-[40rem] font-black italic uppercase leading-none inline-block -translate-y-1/2">
+          RADICAL
+        </span>
       </div>
     </section>
   );

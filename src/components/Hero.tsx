@@ -1,13 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ArrowRight } from "lucide-react";
+import { Zap, ArrowRight, MousePointer2 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const videos = [
+  "/assets/VID_20220717_123740.mp4",
   "/assets/VID_20220714_071755_1.mp4",
   "/assets/20230615_104347.mp4",
-  "/assets/VID_20220717_123740.mp4",
   "/assets/VID_20220721_174021.mp4",
   "/assets/VID_20220722_081226.mp4",
 ];
@@ -23,17 +23,17 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background Compilation */}
-      <div className="absolute inset-0 z-0 bg-brand-dark">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/70 via-brand-dark/40 to-brand-dark z-10" />
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
+      {/* Background Compilation with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-transparent to-brand-dark z-10" />
         <AnimatePresence mode="wait">
           <motion.video
             key={videos[currentVideo]}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 2 }}
             autoPlay
             loop
             muted
@@ -45,67 +45,66 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-4xl">
+      {/* Radical Content */}
+      <div className="relative z-20 text-center px-6 w-full max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, type: "spring" }}
         >
-          <span className="inline-block text-brand-cyan font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-base bg-brand-dark/30 backdrop-blur-sm px-4 py-1 rounded-full">
-            E-foil Peñíscola
-          </span>
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-6 leading-tight drop-shadow-2xl italic uppercase">
-            Vuela sobre <br />
-            <span className="text-gradient">el mar</span>
+          <div className="inline-flex items-center gap-3 mb-6 bg-white/5 backdrop-blur-md px-6 py-2 border border-white/10 rounded-full">
+            <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse" />
+            <span className="text-white/60 font-black tracking-[0.3em] uppercase text-[10px] md:text-xs">
+              Peñíscola Nautical Experience
+            </span>
+          </div>
+          
+          <h1 className="text-7xl md:text-[12rem] font-black text-white leading-[0.75] uppercase italic tracking-tighter mb-12">
+            Vuela <br />
+            <span className="text-transparent stroke-text opacity-50">Sobre</span> <br />
+            <span className="text-brand-cyan">El Mar</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/90 mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-lg font-medium">
-            Una perspectiva única del Castillo de Peñíscola. <br />
-            Sin olas, sin ruido, solo tú volando.
+
+          <p className="text-lg md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-bold uppercase tracking-tight italic">
+            La perspectiva más radical del Castillo de Peñíscola. <br />
+            Sin ruidos. Sin olas. Solo adrenalina.
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <a href="tel:644026066" className="btn-primary text-lg w-full md:w-auto shadow-2xl">
-              <Phone size={24} />
-              ¡Reserva ahora!
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <a href="tel:644026066" className="btn-radical text-2xl group">
+              <Zap size={24} fill="currentColor" />
+              ¡Reserva YA!
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12" />
             </a>
+            
             <a
               href="#experiencia"
-              className="text-white font-bold flex items-center gap-2 hover:text-brand-cyan transition-colors drop-shadow-lg"
+              className="text-white font-black uppercase italic tracking-widest text-sm flex items-center gap-2 group hover:text-brand-cyan transition-colors"
             >
-              Descubrir <ArrowRight size={20} />
+              Descubrir <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </motion.div>
       </div>
 
-      {/* Progress Indicators */}
-      <div className="absolute bottom-12 right-12 z-20 flex gap-2">
+      {/* Modern Indicators */}
+      <div className="absolute bottom-12 left-12 z-20 flex gap-4">
         {videos.map((_, i) => (
           <div
             key={i}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              i === currentVideo ? "w-8 bg-brand-cyan" : "w-2 bg-white/30"
+            className={`h-1 transition-all duration-1000 ${
+              i === currentVideo ? "w-16 bg-brand-cyan" : "w-4 bg-white/20"
             }`}
           />
         ))}
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-          <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1.5 h-1.5 bg-brand-cyan rounded-full"
-          />
-        </div>
-      </motion.div>
+      {/* Vertical Decorative Text */}
+      <div className="absolute right-0 top-0 h-full flex items-center pointer-events-none overflow-hidden pr-4 opacity-5">
+        <span className="text-[20rem] font-black uppercase italic vertical-text leading-none select-none">
+          ACTION
+        </span>
+      </div>
     </section>
   );
 };
