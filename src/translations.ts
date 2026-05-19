@@ -8,6 +8,7 @@ export const translations = {
       rates: "Tarifas",
       gallery: "Galería",
       contact: "Contacto",
+      callNow: "Llamar ahora",
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
@@ -37,6 +38,7 @@ export const translations = {
       title2: "Weapon",
       subtitle: "Sin rollos corporativos. Solo tú volando sobre el mediterráneo.",
       perPers: "/ pers",
+      waMessage: "¡Hola! Quiero reservar: ",
       solo: {
         title: "Solo Flight",
         desc: "¡Tú, la tabla y el mar! Un instructor solo para ti para que domines la Fly Zone en tiempo récord.",
@@ -82,6 +84,10 @@ export const translations = {
     },
     footer: {
       rights: "Todos los derechos reservados.",
+    },
+    whatsapp: {
+      message: "¡Hola! He visto vuestra web y quiero información para volar sobre el mar.",
+      cta: "¡Reserva ya!",
     }
   },
   en: {
@@ -91,6 +97,7 @@ export const translations = {
       rates: "Rates",
       gallery: "Gallery",
       contact: "Contact",
+      callNow: "Call now",
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
@@ -120,6 +127,7 @@ export const translations = {
       title2: "Weapon",
       subtitle: "No corporate talk. Just you flying over the Mediterranean.",
       perPers: "/ pers",
+      waMessage: "Hello! I want to book: ",
       solo: {
         title: "Solo Flight",
         desc: "You, the board, and the sea! A private instructor just for you to master the Fly Zone in record time.",
@@ -165,6 +173,10 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved.",
+    },
+    whatsapp: {
+      message: "Hello! I've seen your website and I want information about flying over the sea.",
+      cta: "Book now!",
     }
   },
   fr: {
@@ -174,6 +186,7 @@ export const translations = {
       rates: "Tarifs",
       gallery: "Galerie",
       contact: "Contact",
+      callNow: "Appeler maintenant",
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
@@ -203,6 +216,7 @@ export const translations = {
       title2: "Arme",
       subtitle: "Pas de discours d'entreprise. Juste vous volant au-dessus de la Méditerranée.",
       perPers: "/ pers",
+      waMessage: "Bonjour ! Je souhaite réserver : ",
       solo: {
         title: "Solo Flight",
         desc: "Vous, la planche et la mer ! Un instructeur privé rien que pour vous pour maîtriser la Fly Zone en un temps record.",
@@ -231,7 +245,7 @@ export const translations = {
         cta: "Go Pro",
       },
       note: "PRIX PAR PERSONNE / BATTERIE",
-      legal: "* Le prix comprend : Combinaison, gilet de flottaison, casque avec intercom, planche eFoil de dernière génération et assurance responsabilité civile. L'activité dure environ 1h 30m et comprend une batterie par session. Le bon est nominatif.",
+      legal: "* Le prix comprend : Combinaison, gilet de flottaison, casque avec intercom, planche eFoil de dernière génération et assurance responsabilidad civile. L'activité dure environ 1h 30m et comprend une batterie par session. Le bon est nominatif.",
     },
     gallery: {
       title1: "Raw",
@@ -248,6 +262,10 @@ export const translations = {
     },
     footer: {
       rights: "Tous droits réservés.",
+    },
+    whatsapp: {
+      message: "Bonjour ! J'ai vu votre site web et je souhaite obtenir des informations pour voler au-dessus de la mer.",
+      cta: "Réservez maintenant !",
     }
   }
 };

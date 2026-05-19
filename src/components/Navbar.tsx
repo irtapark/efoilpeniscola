@@ -125,7 +125,7 @@ const Navbar = () => {
             className="bg-brand-cyan text-white py-4 font-black uppercase italic text-center"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Llamar ahora
+            {t.nav.callNow}
           </a>
         </div>
       )}

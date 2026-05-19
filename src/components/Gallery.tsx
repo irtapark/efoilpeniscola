@@ -18,6 +18,12 @@ const Gallery = () => {
     { type: "image", src: "/assets/IMG-20210917-WA0002.jpg" },
     { type: "image", src: "/assets/20230611_095127.jpg" },
     { type: "image", src: "/assets/20230615_104500.jpg" },
+    { type: "image", src: "/assets/20210929_104220.jpg" },
+    { type: "image", src: "/assets/20220502_120906.jpg" },
+    { type: "image", src: "/assets/20230615_104602.jpg" },
+    { type: "image", src: "/assets/IMG_20220721_174122.jpg" },
+    { type: "video", src: "/assets/20230615_104347.mp4" },
+    { type: "video", src: "/assets/VID_20220714_071755_1.mp4" },
   ];
 
   return (

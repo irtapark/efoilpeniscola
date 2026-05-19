@@ -2,11 +2,14 @@
 
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 const WhatsAppButton = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.a
-      href="https://wa.me/34644026066?text=¡Hola!%20He%20visto%20vuestra%20web%20y%20quiero%20información%20para%20volar%20sobre%20el%20mar."
+      href={`https://wa.me/34644026066?text=${encodeURIComponent(t.whatsapp.message)}`}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
@@ -18,7 +21,7 @@ const WhatsAppButton = () => {
     >
       <MessageCircle size={32} fill="currentColor" />
       <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-bold whitespace-nowrap">
-        ¡Reserva ya!
+        {t.whatsapp.cta}
       </span>
     </motion.a>
   );

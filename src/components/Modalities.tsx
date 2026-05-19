@@ -79,7 +79,7 @@ const Modalities = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1500px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 max-w-[1500px] mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.title}
@@ -89,8 +89,8 @@ const Modalities = () => {
               transition={{ delay: i * 0.1 }}
               className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col ${
                 plan.popular 
-                  ? "bg-brand-cyan/20 border-brand-cyan min-h-[550px] md:h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)]" 
-                  : "bg-white/5 border-white/10 min-h-[500px] md:h-[600px]"
+                  ? "bg-brand-cyan/20 border-brand-cyan md:h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)] z-20" 
+                  : "bg-white/5 border-white/10 md:h-[600px] z-10"
               }`}
             >
               {plan.popular && (
@@ -126,7 +126,7 @@ const Modalities = () => {
                 </ul>
 
                 <a
-                  href={`https://wa.me/34644026066?text=Hello! I want to book: ${plan.title}.`}
+                  href={`https://wa.me/34644026066?text=${encodeURIComponent(t.rates.waMessage + plan.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-5 md:py-7 font-black uppercase tracking-widest text-base md:text-xl transition-all flex items-center justify-center gap-3 md:gap-4 ${
