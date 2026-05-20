@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import PromoBanner from "@/components/PromoBanner";
 import Experience from "@/components/Experience";
 import Modalities from "@/components/Modalities";
 import Gallery from "@/components/Gallery";
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <PromoBanner />
       <Experience />
       <Modalities />
       <Gallery />

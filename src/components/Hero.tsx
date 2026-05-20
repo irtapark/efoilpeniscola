@@ -54,12 +54,6 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring" }}
         >
-          <div className="inline-block transform -skew-x-12 -rotate-3 mb-6 md:mb-8">
-            <span className="text-brand-cyan font-black italic uppercase text-sm md:text-2xl tracking-widest drop-shadow-[0_0_10px_rgba(0,209,255,0.5)]">
-              {t.hero.promo}
-            </span>
-          </div>
-
           <h1 className="text-5xl md:text-[12rem] font-black text-white leading-[0.85] uppercase italic tracking-tighter mb-8">
             {t.hero.vuela} <br />
             <span className="text-transparent stroke-text opacity-40">{t.hero.sobre}</span> <br />
