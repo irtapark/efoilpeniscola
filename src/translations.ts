@@ -12,6 +12,7 @@ export const translations = {
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
+      promo: "🔥 OFERTA DE MAYO: DÚO POR 40€/PERS",
       vuela: "Vuela",
       sobre: "Sobre",
       elMar: "El Mar",
@@ -108,6 +109,7 @@ export const translations = {
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
+      promo: "🔥 MAY PROMO: DUO FOR 40€/PERS",
       vuela: "Fly",
       sobre: "Above",
       elMar: "The Sea",
@@ -204,6 +206,7 @@ export const translations = {
     },
     hero: {
       badge: "Peñíscola E-foil Experience",
+      promo: "🔥 PROMO DE MAI : DUO À 40€/PERS",
       vuela: "Volez",
       sobre: "Sur",
       elMar: "La Mer",
