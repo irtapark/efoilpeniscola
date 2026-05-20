@@ -41,7 +41,7 @@ body {
 }
 
 .btn-radical {
-  @apply relative overflow-hidden bg-brand-cyan text-white font-black py-5 px-12 uppercase italic tracking-tighter transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg;
+  @apply relative overflow-hidden bg-brand-cyan text-brand-dark font-black py-5 px-12 uppercase italic tracking-tighter transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg;
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
 

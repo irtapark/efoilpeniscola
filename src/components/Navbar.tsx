@@ -76,7 +76,7 @@ const Navbar = () => {
 
           <a
             href="tel:644026066"
-            className="bg-brand-cyan text-white px-6 py-2 rounded-none -skew-x-12 font-black flex items-center gap-2 hover:scale-105 transition-transform italic text-sm"
+            className="bg-brand-cyan text-brand-dark px-6 py-2 rounded-none -skew-x-12 font-black flex items-center gap-2 hover:scale-105 transition-transform italic text-sm"
           >
             <Phone size={16} fill="currentColor" />
             644 026 066
@@ -122,7 +122,7 @@ const Navbar = () => {
 
           <a
             href="tel:644026066"
-            className="bg-brand-cyan text-white py-4 font-black uppercase italic text-center"
+            className="bg-brand-cyan text-brand-dark py-4 font-black uppercase italic text-center"
             onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.callNow}

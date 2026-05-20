@@ -62,7 +62,7 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="relative group overflow-hidden bg-brand-dark border border-white/5"
+              className="relative group overflow-hidden bg-brand-dark border border-white/5 break-inside-avoid"
             >
               {asset.type === "image" ? (
                 <img

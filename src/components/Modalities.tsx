@@ -79,7 +79,7 @@ const Modalities = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-col md:grid md:grid-cols-3 gap-20 md:gap-6 max-w-[1500px] mx-auto relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-20 lg:gap-6 max-w-[1500px] mx-auto relative z-10">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.title}
@@ -89,8 +89,8 @@ const Modalities = () => {
               transition={{ delay: i * 0.1 }}
               className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col w-full ${
                 plan.popular 
-                  ? "bg-brand-cyan/20 border-brand-cyan md:h-[650px] md:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)] z-20" 
-                  : "bg-white/5 border-white/10 md:h-[600px] z-10"
+                  ? "bg-brand-cyan/20 border-brand-cyan lg:min-h-[650px] lg:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)] z-20" 
+                  : "bg-white/5 border-white/10 lg:min-h-[600px] z-10"
               }`}
             >
               {plan.popular && (
@@ -135,7 +135,7 @@ const Modalities = () => {
                       : "bg-brand-cyan text-brand-dark hover:bg-white hover:text-brand-dark"
                   }`}
                 >
-                  <Zap size={18} md:size={24} fill="currentColor" />
+                  <Zap className="w-[18px] h-[18px] md:w-[24px] md:h-[24px]" fill="currentColor" />
                   {plan.cta}
                 </a>
                 
