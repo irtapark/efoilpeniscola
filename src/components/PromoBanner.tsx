@@ -38,7 +38,7 @@ const PromoBanner = () => {
             Oferta de <span className="text-brand-cyan">Mayo</span>
           </h2>
           <p className="text-lg md:text-xl text-white/80 font-bold italic uppercase tracking-widest mb-8">
-            Reserva tu sesión para dos personas por solo 40€ por persona y vuela sobre el mar con la mejor compañía.
+            Sesión para 2 por solo 40€ /persona
           </p>
         </motion.div>
 
