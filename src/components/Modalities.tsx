@@ -11,7 +11,7 @@ const Modalities = () => {
     {
       title: t.rates.solo.title,
       price: "75€",
-      duration: "1h 30min (1 Batería)",
+      duration: t.rates.solo.duration,
       description: t.rates.solo.desc,
       icon: <Wind size={32} className="md:w-11 md:h-11" />,
       features: [
@@ -27,7 +27,7 @@ const Modalities = () => {
     {
       title: t.rates.duo.title,
       price: "50€",
-      duration: "1h 30min (1 Batería)",
+      duration: t.rates.duo.duration,
       description: t.rates.duo.desc,
       icon: <Waves size={32} className="md:w-11 md:h-11" />,
       features: [
@@ -43,7 +43,7 @@ const Modalities = () => {
     {
       title: t.rates.pro.title,
       price: "230€",
-      duration: "4 Baterías Full",
+      duration: t.rates.pro.duration,
       description: t.rates.pro.desc,
       icon: <Gauge size={32} className="md:w-11 md:h-11" />,
       features: [
@@ -71,8 +71,8 @@ const Modalities = () => {
           className="mb-12 md:mb-24"
         >
           <h2 className="text-5xl md:text-[10rem] font-black mb-4 md:mb-6 uppercase italic tracking-tighter leading-none">
-            Choose Your <br />
-            <span className="text-brand-cyan">Weapon</span>
+            {t.rates.title1} <br />
+            <span className="text-brand-cyan">{t.rates.title2}</span>
           </h2>
           <p className="text-white/40 text-lg md:text-2xl max-w-xl font-black uppercase italic tracking-widest leading-tight">
             {t.rates.subtitle}
@@ -95,7 +95,7 @@ const Modalities = () => {
             >
               {plan.popular && (
                 <span className="absolute top-0 right-0 bg-white text-brand-dark px-4 md:px-6 py-1 md:py-2 font-black uppercase italic tracking-widest text-[9px] md:text-xs">
-                  Most Radical Choice
+                  {t.rates.popularBadge}
                 </span>
               )}
 

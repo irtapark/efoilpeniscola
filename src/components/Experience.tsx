@@ -76,7 +76,7 @@ const Experience = () => {
             />
             
             <div className="absolute bottom-6 -left-4 md:bottom-10 md:-left-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl -rotate-6">
-              Live <br /> The <br /> Action
+              {t.experience.badgeText1} <br /> {t.experience.badgeText2} <br /> {t.experience.badgeText3}
             </div>
           </motion.div>
         </div>

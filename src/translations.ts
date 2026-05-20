@@ -32,13 +32,17 @@ export const translations = {
       desc3: "Sin ruidos, sin humos, solo energía pura.",
       feat4: "Full Control",
       desc4: "Tú manejas la potencia con el gatillo inalámbrico.",
+      badgeText1: "Vive",
+      badgeText2: "La",
+      badgeText3: "Acción",
     },
     rates: {
-      title1: "Choose Your",
-      title2: "Weapon",
+      title1: "Elige Tu",
+      title2: "Arma",
       subtitle: "Sin rollos corporativos. Solo tú volando sobre el mediterráneo.",
       perPers: "/ pers",
       waMessage: "¡Hola! Quiero reservar: ",
+      popularBadge: "La Elección Más Radical",
       solo: {
         title: "Solo Flight",
         desc: "¡Tú, la tabla y el mar! Un instructor solo para ti para que domines la Fly Zone en tiempo récord.",
@@ -47,6 +51,7 @@ export const translations = {
         f3: "Full Insurance",
         f4: "Insta-Ready Content",
         cta: "Vuela Solo",
+        duration: "1h 30min (1 Batería)",
       },
       duo: {
         title: "Duo Session",
@@ -56,6 +61,7 @@ export const translations = {
         f3: "Competición Radical",
         f4: "Todo Incluido",
         cta: "Vuelo Duo",
+        duration: "1h 30min (1 Batería)",
       },
       pro: {
         title: "Pro Pack 4",
@@ -65,6 +71,7 @@ export const translations = {
         f3: "Save 70€ Now",
         f4: "Master the Foil",
         cta: "Go Pro",
+        duration: "4 Baterías Completas",
       },
       note: "PRECIO POR PERSONA / BATERÍA",
       legal: "* El precio incluye: Neopreno, chaleco de flotación, casco con intercomunicador, tabla de eFoil de última generación y seguro de responsabilidad civil. La actividad tiene una duración aproximada de 1h 30m e incluye una batería por sesión. El bono es nominal.",
@@ -121,6 +128,9 @@ export const translations = {
       desc3: "No noise, no fumes, just pure energy.",
       feat4: "Full Control",
       desc4: "You handle the power with the wireless trigger.",
+      badgeText1: "Live",
+      badgeText2: "The",
+      badgeText3: "Action",
     },
     rates: {
       title1: "Choose Your",
@@ -128,6 +138,7 @@ export const translations = {
       subtitle: "No corporate talk. Just you flying over the Mediterranean.",
       perPers: "/ pers",
       waMessage: "Hello! I want to book: ",
+      popularBadge: "Most Radical Choice",
       solo: {
         title: "Solo Flight",
         desc: "You, the board, and the sea! A private instructor just for you to master the Fly Zone in record time.",
@@ -136,6 +147,7 @@ export const translations = {
         f3: "Full Insurance",
         f4: "Insta-Ready Content",
         cta: "Fly Solo",
+        duration: "1h 30min (1 Battery)",
       },
       duo: {
         title: "Duo Session",
@@ -145,6 +157,7 @@ export const translations = {
         f3: "Radical Competition",
         f4: "All Included",
         cta: "Duo Flight",
+        duration: "1h 30min (1 Battery)",
       },
       pro: {
         title: "Pro Pack 4",
@@ -154,6 +167,7 @@ export const translations = {
         f3: "Save 70€ Now",
         f4: "Master the Foil",
         cta: "Go Pro",
+        duration: "4 Full Batteries",
       },
       note: "PRICE PER PERSON / BATTERY",
       legal: "* Price includes: Wetsuit, flotation vest, helmet with intercom, latest generation eFoil board, and liability insurance. Activity lasts approximately 1h 30m and includes one battery per session. The voucher is personal.",
@@ -210,6 +224,9 @@ export const translations = {
       desc3: "Pas de bruit, pas de fumée, juste de l'énergie pure.",
       feat4: "Full Control",
       desc4: "Vous gérez la puissance avec la gâchette sans fil.",
+      badgeText1: "Vivez",
+      badgeText2: "L'",
+      badgeText3: "Action",
     },
     rates: {
       title1: "Choisissez Votre",
@@ -217,6 +234,7 @@ export const translations = {
       subtitle: "Pas de discours d'entreprise. Juste vous volant au-dessus de la Méditerranée.",
       perPers: "/ pers",
       waMessage: "Bonjour ! Je souhaite réserver : ",
+      popularBadge: "Le Choix Le Plus Radical",
       solo: {
         title: "Solo Flight",
         desc: "Vous, la planche et la mer ! Un instructeur privé rien que pour vous pour maîtriser la Fly Zone en un temps record.",
@@ -225,6 +243,7 @@ export const translations = {
         f3: "Assurance Complète",
         f4: "Contenu Insta-Ready",
         cta: "Volez Solo",
+        duration: "1h 30m (1 Batterie)",
       },
       duo: {
         title: "Duo Session",
@@ -234,6 +253,7 @@ export const translations = {
         f3: "Compétition Radicale",
         f4: "Tout Inclus",
         cta: "Vol Duo",
+        duration: "1h 30m (1 Batterie)",
       },
       pro: {
         title: "Pro Pack 4",
@@ -243,6 +263,7 @@ export const translations = {
         f3: "Économisez 70€ Maintenant",
         f4: "Maîtrisez le Foil",
         cta: "Go Pro",
+        duration: "4 Batteries Pleines",
       },
       note: "PRIX PAR PERSONNE / BATTERIE",
       legal: "* Le prix comprend : Combinaison, gilet de flottaison, casque avec intercom, planche eFoil de dernière génération et assurance responsabilidad civile. L'activité dure environ 1h 30m et comprend une batterie par session. Le bon est nominatif.",
