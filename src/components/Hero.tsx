@@ -54,13 +54,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring" }}
         >
-          <div className="inline-flex items-center gap-2 mb-4 bg-white/5 backdrop-blur-md px-4 py-1.5 border border-white/10 rounded-full">
-            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse" />
-            <span className="text-white/60 font-black tracking-[0.2em] uppercase text-[9px] md:text-xs">
-              {t.hero.badge}
-            </span>
-          </div>
-          
+
           <h1 className="text-5xl md:text-[12rem] font-black text-white leading-[0.85] uppercase italic tracking-tighter mb-8">
             {t.hero.vuela} <br />
             <span className="text-transparent stroke-text opacity-40">{t.hero.sobre}</span> <br />
