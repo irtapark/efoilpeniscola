@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Wind, Waves, Sliders, Gauge, Anchor } from "lucide-react";
+import Image from "next/image";
+import { Zap, Wind, Sliders, Gauge } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Experience = () => {
@@ -64,18 +65,21 @@ const Experience = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative mt-12 md:mt-0"
+            className="relative mt-12 md:mt-0 w-full h-[500px] md:h-[800px]"
           >
             {/* Radical Image Frame */}
-            <div className="absolute -inset-2 md:-inset-4 border-2 border-brand-cyan/20 -rotate-3" />
+            <div className="absolute -inset-2 md:-inset-4 border-2 border-brand-cyan/20 -rotate-3 z-0" />
             
-            <img
+            <Image
               src="/assets/IMG-20210629-WA0002.jpg"
               alt="Radical E-foil Peñíscola"
-              className="relative rounded-none shadow-2xl w-full h-[500px] md:h-[800px] object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-1000"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="rounded-none shadow-2xl object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-1000 z-10"
+              priority
             />
             
-            <div className="absolute bottom-6 -left-4 md:bottom-10 md:-left-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl -rotate-6">
+            <div className="absolute bottom-6 -left-4 md:bottom-10 md:-left-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl -rotate-6 z-20">
               {t.experience.badgeText1} <br /> {t.experience.badgeText2} <br /> {t.experience.badgeText3}
             </div>
           </motion.div>

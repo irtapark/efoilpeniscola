@@ -54,7 +54,7 @@ const Modalities = () => {
       ],
       cta: t.rates.pro.cta,
       popular: false,
-      note: t.rates.pro.note
+      note: t.rates.note
     },
   ];
 

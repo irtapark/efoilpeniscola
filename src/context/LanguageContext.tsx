@@ -6,7 +6,7 @@ import { Language, translations } from '@/translations';
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: any;
+  t: typeof translations.es;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -17,6 +17,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const savedLang = localStorage.getItem('preferred-lang') as Language;
     if (savedLang && (savedLang === 'es' || savedLang === 'en' || savedLang === 'fr')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLanguage(savedLang);
     }
   }, []);
