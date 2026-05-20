@@ -29,13 +29,13 @@ const PromoBanner = () => {
           viewport={{ once: true }}
           className="max-w-2xl"
         >
-          <div className="inline-flex items-center gap-2 mb-4 bg-brand-cyan/20 border border-brand-cyan/50 text-brand-cyan px-4 py-1.5 rounded-none -skew-x-12">
+          <div className="inline-flex items-center gap-2 mb-4 bg-yellow-400/20 border border-yellow-400/50 text-yellow-400 px-4 py-1.5 rounded-none -skew-x-12">
             <span className="font-black tracking-[0.2em] uppercase text-xs">
               Especial Apertura de Temporada
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-4">
-            Oferta de <span className="text-brand-cyan">Mayo</span>
+            Oferta de <span className="text-yellow-400">Mayo</span>
           </h2>
           <p className="text-lg md:text-xl text-white/80 font-bold italic uppercase tracking-widest mb-8">
             Sesión para 2 por solo 40€ /persona
@@ -52,7 +52,7 @@ const PromoBanner = () => {
             href={`https://wa.me/34644026066?text=${encodeURIComponent("¡Hola! Quiero aprovechar la Oferta de Mayo (Dúo por 40€/pers).")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-radical text-xl md:text-2xl w-full md:w-auto inline-flex items-center justify-center shadow-[0_0_30px_rgba(0,209,255,0.3)] hover:shadow-[0_0_50px_rgba(0,209,255,0.5)]"
+            className="btn-radical !bg-yellow-400 !text-black border-none text-xl md:text-2xl w-full md:w-auto inline-flex items-center justify-center shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:shadow-[0_0_50px_rgba(250,204,21,0.6)]"
           >
             <Zap className="mr-2" />
             ¡Aprovechar Promo!
@@ -61,7 +61,7 @@ const PromoBanner = () => {
       </div>
 
       {/* Decorative Radical Element */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-2 bg-brand-cyan" />
+      <div className="absolute bottom-0 right-0 w-1/3 h-2 bg-yellow-400" />
     </section>
   );
 };
