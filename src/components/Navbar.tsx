@@ -38,7 +38,7 @@ const Navbar = () => {
     { name: t.servicesPage.vela.title, href: `/${language}/vela-ligera` },
     { name: t.servicesPage.banana.title, href: `/${language}/banana-boat` },
     { name: t.servicesPage.kitesurf.title, href: `/${language}/kitesurf` },
-    { name: t.servicesPage.wingfoil.title, href: `/${language}/wingfoil` },
+    { name: t.servicesPage.wingfoil.title, href: `/${language}/wingsup` },
     { name: t.servicesPage.surf.title, href: `/${language}/surf` },
   ];
 

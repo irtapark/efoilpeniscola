@@ -75,7 +75,7 @@ const OtherServices = () => {
     {
       id: "vela",
       title: s.vela.title,
-      desc: language === 'es' ? 'Aprende el arte de la navegación o alquila monocascos y catamaranes modernos guiado por patrones expertos.' : language === 'fr' ? 'Apprenez l\'art de la navigation ou louez des catamarans et dériveurs modernes guidés par des skippers experts.' : 'Learn the art of navigation or rent modern catamarans and dinghies guided by certified skippers.',
+      desc: language === 'es' ? 'Aprende el arte de la navegación con nuestros cursos de vela ligera guiado por patrones expertos.' : language === 'fr' ? 'Apprenez l\'art de la navigation avec nos cours de voile légère guidés par des skippers experts.' : 'Learn the art of navigation with our dinghy sailing courses guided by certified skippers.',
       href: `/${language}/vela-ligera`,
       tag: language === 'es' ? 'Navegación Clásica' : language === 'fr' ? 'Voile Classique' : 'Classic Sailing',
       image: "/assets/vela-ligera/20240624_103136.jpg",
@@ -93,9 +93,9 @@ const OtherServices = () => {
     {
       id: "wingfoil",
       title: s.wingfoil.title,
-      desc: language === 'es' ? 'Aprende a volar sobre el mar con un ala inflable. La fusión definitiva del surf y el viento.' : language === 'fr' ? 'Apprenez à voler au-dessus de la mer avec une aile gonflable. La fusion ultime du surf et du vent.' : 'Learn to fly over the sea with an inflatable wing. The ultimate fusion of wind and surf.',
-      href: `/${language}/wingfoil`,
-      tag: language === 'es' ? 'Foil de Vanguardia' : language === 'fr' ? 'Hydrofoil Moderne' : 'Modern Hydrofoil',
+      desc: language === 'es' ? 'Aprende a navegar sobre una tabla estable de paddle surf impulsado por un ala de viento.' : language === 'fr' ? 'Apprenez à naviguer sur une planche stable de paddle surf propulsé par une aile de vent.' : 'Learn to navigate on a stable paddle board propelled by a wind wing.',
+      href: `/${language}/wingsup`,
+      tag: language === 'es' ? 'Viento y SUP' : language === 'fr' ? 'Vent & SUP' : 'Wind & SUP',
       image: "/assets/wingfoil/20260522_174205.jpg",
       isAnchor: false
     },

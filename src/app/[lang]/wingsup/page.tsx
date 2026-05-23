@@ -1,6 +1,6 @@
 import { Language, translations } from "@/translations";
 import { LanguageProvider } from "@/context/LanguageContext";
-import WingfoilContent from "./WingfoilContent";
+import WingsupContent from "./WingsupContent";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -24,18 +24,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: p.metaTitle,
     description: p.metaDesc,
     alternates: {
-      canonical: `https://efoilpeniscola.com/${lang}/wingfoil`,
+      canonical: `https://efoilpeniscola.com/${lang}/wingsup`,
       languages: {
-        'es-ES': 'https://efoilpeniscola.com/es/wingfoil',
-        'en-US': 'https://efoilpeniscola.com/en/wingfoil',
-        'fr-FR': 'https://efoilpeniscola.com/fr/wingfoil',
-        'x-default': 'https://efoilpeniscola.com/es/wingfoil',
+        'es-ES': 'https://efoilpeniscola.com/es/wingsup',
+        'en-US': 'https://efoilpeniscola.com/en/wingsup',
+        'fr-FR': 'https://efoilpeniscola.com/fr/wingsup',
+        'x-default': 'https://efoilpeniscola.com/es/wingsup',
       }
     },
     openGraph: {
       title: p.metaTitle,
       description: p.metaDesc,
-      url: `https://efoilpeniscola.com/${lang}/wingfoil`,
+      url: `https://efoilpeniscola.com/${lang}/wingsup`,
     }
   };
 }
@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <LanguageProvider defaultLanguage={lang}>
-      <WingfoilContent lang={lang} />
+      <WingsupContent lang={lang} />
     </LanguageProvider>
   );
 }

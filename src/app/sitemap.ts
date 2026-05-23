@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'windsurf',
     'excursiones',
     'kitesurf',
-    'wingfoil',
+    'wingsup',
     'surf',
     'banana-boat',
     'flyboard',

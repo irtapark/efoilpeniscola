@@ -283,22 +283,22 @@ const getRatesDetails = (key: string, lang: Language, p: any) => {
           title: p.rentalSingle,
           price: p.rentalSinglePrice,
           duration: "1h / 2h",
-          desc: isEs ? "Alquiler de Catamarán para navegantes experimentados." : isFr ? "Location de catamaran pour navigateurs expérimentés." : "Catamaran rental for experienced sailors.",
+          desc: isEs ? "Para 2 personas. Descubre la vela ligera de forma fácil y divertida." : isFr ? "Pour 2 personnes. Découvrez la voile légère de manière simple et amusante." : "For 2 people. Discover dinghy sailing in an easy and fun way.",
           icon: <Clock className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook
         },
         {
           title: p.rentalDouble,
           price: p.rentalDoublePrice,
-          duration: "1h / 2h",
-          desc: isEs ? "Alquiler de monocasco estable. Perfecto para compartir." : isFr ? "Location de dériveur stable. Parfait pour partager." : "Stable dinghy rental. Perfect for sharing.",
+          duration: "10h",
+          desc: isEs ? "De lunes a viernes. Mínimo 2 personas. Precio por persona." : isFr ? "Du lundi au vendredi. Minimum 2 personnes. Prix par personne." : "From Monday to Friday. Minimum 2 people. Price per person.",
           icon: <Clock className="w-8 h-8 text-brand-cyan animate-pulse" />,
           cta: p.ctaBook
         },
         {
           title: p.excursionTitle,
           price: p.excursionPrice,
-          duration: "1h 30m",
+          duration: "5h",
           desc: p.excursionDesc,
           icon: <Sun className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook,
@@ -395,24 +395,8 @@ const getRatesDetails = (key: string, lang: Language, p: any) => {
           title: p.rentalSingle,
           price: p.rentalSinglePrice,
           duration: "2h",
-          desc: isEs ? "Control del ala en tierra y primeros deslizamientos sobre tabla estable." : isFr ? "Contrôle de l'aile à terre et premières glisses." : "Wing control on land and first glides on a stable board.",
+          desc: isEs ? "Primer contacto con el ala en tierra y primeros deslizamientos sobre tabla estable de paddle surf." : isFr ? "Premier contact avec l'aile au sol et premières glisses sur une planche stable de stand up paddle." : "First contact with the wing on land and first glides on a stable stand up paddle board.",
           icon: <Clock className="w-8 h-8 text-brand-cyan" />,
-          cta: p.ctaBook
-        },
-        {
-          title: p.rentalDouble,
-          price: p.rentalDoublePrice,
-          duration: "2h",
-          desc: isEs ? "Alquiler de equipo completo de wingfoil de última generación." : isFr ? "Location de matériel complet de wingfoil dernière génération." : "Full premium wingfoil equipment rental.",
-          icon: <Clock className="w-8 h-8 text-brand-cyan animate-pulse" />,
-          cta: p.ctaBook
-        },
-        {
-          title: p.excursionTitle,
-          price: p.excursionPrice,
-          duration: "2 Horas",
-          desc: p.excursionDesc,
-          icon: <Sun className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook,
           popular: true
         }
