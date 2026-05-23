@@ -96,7 +96,7 @@ const OtherServices = () => {
       desc: language === 'es' ? 'Aprende a volar sobre el mar con un ala inflable. La fusión definitiva del surf y el viento.' : language === 'fr' ? 'Apprenez à voler au-dessus de la mer avec une aile gonflable. La fusion ultime du surf et du vent.' : 'Learn to fly over the sea with an inflatable wing. The ultimate fusion of wind and surf.',
       href: `/${language}/wingfoil`,
       tag: language === 'es' ? 'Foil de Vanguardia' : language === 'fr' ? 'Hydrofoil Moderne' : 'Modern Hydrofoil',
-      image: "/assets/wingfoil/hero.png",
+      image: "/assets/wingfoil/20260522_174205.jpg",
       isAnchor: false
     },
     {

@@ -85,9 +85,11 @@ const sportMediaMap: Record<string, SportMedia> = {
     ]
   },
   wingfoil: {
-    hero: { type: 'image', src: '/assets/wingfoil/hero.png' },
+    hero: { type: 'image', src: '/assets/wingfoil/20260522_174205.jpg' },
     gallery: [
-      { type: 'image', src: '/assets/wingfoil/hero.png' }
+      { type: 'image', src: '/assets/wingfoil/20260522_174205.jpg' },
+      { type: 'image', src: '/assets/wingfoil/20260522_174158.jpg' },
+      { type: 'image', src: '/assets/wingfoil/20260522_175637.jpg' }
     ]
   },
   surf: {
