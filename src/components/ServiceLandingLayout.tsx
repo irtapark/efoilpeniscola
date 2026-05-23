@@ -706,9 +706,8 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-brand-cyan/20 bg-brand-cyan/5 text-brand-cyan text-[10px] font-black uppercase tracking-[0.2em] italic mb-4">
               {lang === 'es' ? 'Elige Tu Experiencia' : lang === 'fr' ? 'Choisissez Votre Expérience' : 'Choose Your Experience'}
             </div>
-            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none mb-4">
-              {lang === 'es' ? 'Precios y' : lang === 'fr' ? 'Prix et' : 'Rates &'}{' '}
-              <span className="text-brand-cyan">{lang === 'es' ? 'TARIFAS' : lang === 'fr' ? 'TARIFS' : 'PACKS'}</span>
+            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter leading-none mb-4 text-brand-cyan">
+              {lang === 'es' ? 'TARIFAS' : lang === 'fr' ? 'TARIFS' : 'RATES'}
             </h2>
             <p className="text-white/40 text-sm md:text-base font-black italic tracking-widest max-w-xl mx-auto leading-tight">
               {p.ratesSubtitle}

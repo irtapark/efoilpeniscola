@@ -40,8 +40,6 @@ const Navbar = () => {
     { name: t.servicesPage.kitesurf.title, href: `/${language}/kitesurf` },
     { name: t.servicesPage.wingfoil.title, href: `/${language}/wingfoil` },
     { name: t.servicesPage.surf.title, href: `/${language}/surf` },
-    { name: t.servicesPage.flyboard.title, href: `/${language}/flyboard` },
-    { name: t.servicesPage.jetski.title, href: `/${language}/motos-de-agua` },
   ];
 
   const languages: { code: Language; label: string }[] = [
