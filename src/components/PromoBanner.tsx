@@ -22,7 +22,7 @@ const PromoBanner = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24 flex flex-col md:flex-row items-center justify-between gap-8">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -37,8 +37,8 @@ const PromoBanner = () => {
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-4">
             Oferta de <span className="text-yellow-400">Mayo</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/80 font-bold italic uppercase tracking-widest mb-8">
-            Sesión para 2 por solo 40€ /persona
+          <p className="text-lg md:text-xl text-white/80 font-bold italic tracking-widest mb-8">
+            Sesión E-foil para 2 por solo 40€ /persona
           </p>
         </motion.div>
 

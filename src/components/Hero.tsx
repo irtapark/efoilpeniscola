@@ -54,13 +54,17 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring" }}
         >
+          <span className="inline-block bg-brand-cyan text-brand-dark px-4 py-1.5 md:px-6 md:py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.25em] italic -skew-x-12 mb-6 md:mb-8 select-none shadow-[0_0_30px_rgba(0,209,255,0.2)]">
+            {t.hero.badge}
+          </span>
+
           <h1 className="text-5xl md:text-[12rem] font-black text-white leading-[0.85] uppercase italic tracking-tighter mb-8">
             {t.hero.vuela} <br />
             <span className="text-transparent stroke-text opacity-40">{t.hero.sobre}</span> <br />
             <span className="text-brand-cyan">{t.hero.elMar}</span>
           </h1>
 
-          <p className="text-base md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto font-bold uppercase tracking-tight italic leading-snug">
+          <p className="text-base md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto font-bold tracking-wide italic leading-snug">
             {t.hero.desc}
           </p>
 

@@ -10,13 +10,15 @@ const Contact = () => {
   const locations = [
     {
       title: "Playa Norte",
-      desc: "Castillo Papa Luna",
+      desc: "Punto de encuentro (Frente al Castillo de Papa Luna)",
       icon: <MapPin size={24} className="text-brand-cyan" />,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Playa+Norte+Peñíscola+Castillo+Papa+Luna"
     },
     {
-      title: "Puerto Peñíscola",
-      desc: "Nudo Beach Club",
+      title: "Puerto de Peñíscola",
+      desc: "En el Puerto Deportivo con Nauticriders (Entrada por Nudo Beach Club)",
       icon: <MapPin size={24} className="text-brand-cyan" />,
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Nauticriders+Puerto+Peñíscola"
     },
   ];
 
@@ -32,19 +34,26 @@ const Contact = () => {
             <h2 className="text-5xl md:text-8xl font-black mb-8 md:mb-12 italic uppercase tracking-tighter leading-none">
               {t.contact.title}
             </h2>
-            <p className="text-lg md:text-xl mb-12 md:mb-16 font-bold uppercase italic leading-tight text-white/50">
+            <p className="text-lg md:text-xl mb-12 md:mb-16 font-bold italic leading-tight text-white/50">
               {t.contact.p1}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
               {locations.map((loc, i) => (
-                <div key={i} className="flex flex-col gap-3 md:gap-4 p-6 md:p-8 bg-white/5 border-l-4 border-brand-cyan">
-                  <div className="shrink-0">{loc.icon}</div>
+                <a
+                  key={i}
+                  href={loc.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-3 md:gap-4 p-6 md:p-8 bg-white/5 border-l-4 border-brand-cyan hover:bg-white/10 transition-colors group cursor-pointer"
+                  title="Ver en Google Maps"
+                >
+                  <div className="shrink-0 group-hover:scale-110 transition-transform">{loc.icon}</div>
                   <div>
-                    <h4 className="font-black text-lg md:text-xl mb-1 uppercase italic">{loc.title}</h4>
-                    <p className="text-white/40 text-[10px] md:text-sm uppercase font-bold">{loc.desc}</p>
+                    <h4 className="font-black text-lg md:text-xl mb-1 uppercase italic group-hover:text-brand-cyan transition-colors">{loc.title}</h4>
+                    <p className="text-white/40 text-[10px] md:text-sm font-bold">{loc.desc}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </motion.div>
@@ -90,10 +99,10 @@ const Contact = () => {
               <p className="font-black text-xl md:text-2xl mb-1 md:mb-2 uppercase italic tracking-tighter text-brand-cyan">
                 {t.contact.hours}
               </p>
-              <p className="text-white/60 font-bold uppercase text-[10px] md:text-sm tracking-widest">
+              <p className="text-white/60 font-bold text-[10px] md:text-sm tracking-widest">
                 {t.contact.days}
               </p>
-              <p className="text-[8px] md:text-[10px] mt-4 md:mt-6 text-white/30 font-black uppercase tracking-[0.2em] md:tracking-[0.3em]">
+              <p className="text-[8px] md:text-[10px] mt-4 md:mt-6 text-white/30 font-black tracking-[0.1em] md:tracking-[0.15em]">
                 {t.contact.weather}
               </p>
             </div>

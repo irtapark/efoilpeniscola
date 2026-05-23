@@ -11,16 +11,19 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('es');
+export const LanguageProvider = ({ children, defaultLanguage }: { children: ReactNode; defaultLanguage?: Language }) => {
+  const [language, setLanguage] = useState<Language>(defaultLanguage || 'es');
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('preferred-lang') as Language;
-    if (savedLang && (savedLang === 'es' || savedLang === 'en' || savedLang === 'fr')) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLanguage(savedLang);
+    if (defaultLanguage) {
+      setLanguage(defaultLanguage);
+    } else {
+      const savedLang = localStorage.getItem('preferred-lang') as Language;
+      if (savedLang && (savedLang === 'es' || savedLang === 'en' || savedLang === 'fr')) {
+        setLanguage(savedLang);
+      }
     }
-  }, []);
+  }, [defaultLanguage]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);

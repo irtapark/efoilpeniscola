@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw local photo archives and folders
+*.zip
+/kayak/
+/Sunrise/
+/Windsurf/
+/Vela Ligera/
+/Motos de agua/
+/Photos-3-001/
+/Photos-3-001 (1)/
+/web-assets/
+

@@ -42,7 +42,7 @@ const Gallery = () => {
               {t.gallery.title1} <br />
               <span className="text-brand-cyan">{t.gallery.title2}</span>
             </h2>
-            <p className="text-white/40 mt-10 font-bold uppercase tracking-widest italic">
+            <p className="text-white/40 mt-10 font-bold tracking-widest italic">
               {t.gallery.subtitle}
             </p>
           </motion.div>

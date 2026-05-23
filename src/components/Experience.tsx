@@ -28,13 +28,17 @@ const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <div className="inline-flex items-center gap-2 bg-brand-cyan/10 border border-brand-cyan/30 px-4 py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] italic text-brand-cyan mb-6 -skew-x-12 select-none shadow-[0_0_20px_rgba(0,209,255,0.05)]">
+              {t.experience.joyaCorona}
+            </div>
+
             <h2 className="text-5xl md:text-9xl font-black mb-8 md:mb-12 leading-[0.85] uppercase italic tracking-tighter">
               {t.experience.title1} <br />
               <span className="text-brand-cyan">{t.experience.title2}</span> <br />
               {t.experience.title3}
             </h2>
             
-            <div className="space-y-6 md:space-y-8 text-lg md:text-xl text-white/60 font-bold uppercase italic leading-tight mb-12 md:mb-16">
+            <div className="space-y-6 md:space-y-8 text-lg md:text-xl text-white/60 font-bold italic leading-tight mb-12 md:mb-16">
               <p className="border-l-4 border-brand-cyan pl-4 md:pl-6">
                 {t.experience.p1}
               </p>
@@ -53,7 +57,7 @@ const Experience = () => {
                   </div>
                   <div>
                     <h4 className="font-black uppercase italic tracking-tighter text-sm md:text-xl mb-1">{f.title}</h4>
-                    <p className="text-[10px] md:text-xs text-white/40 uppercase tracking-widest font-bold">{f.desc}</p>
+                    <p className="text-[10px] md:text-xs text-white/40 tracking-wider font-bold">{f.desc}</p>
                   </div>
                 </div>
               ))}
@@ -75,11 +79,11 @@ const Experience = () => {
               alt="Radical E-foil Peñíscola"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="rounded-none shadow-2xl object-cover mix-blend-lighten grayscale hover:grayscale-0 transition-all duration-1000 z-10"
+              className="rounded-none shadow-2xl object-cover transition-all duration-1000 z-10"
               priority
             />
             
-            <div className="absolute bottom-6 -left-4 md:bottom-10 md:-left-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl -rotate-6 z-20">
+            <div className="absolute bottom-6 -right-4 md:bottom-10 md:-right-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl rotate-6 z-20">
               {t.experience.badgeText1} <br /> {t.experience.badgeText2} <br /> {t.experience.badgeText3}
             </div>
           </motion.div>

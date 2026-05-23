@@ -74,7 +74,7 @@ const Modalities = () => {
             {t.rates.title1} <br />
             <span className="text-brand-cyan">{t.rates.title2}</span>
           </h2>
-          <p className="text-white/40 text-lg md:text-2xl max-w-xl font-black uppercase italic tracking-widest leading-tight">
+          <p className="text-white/40 text-lg md:text-2xl max-w-xl font-black italic tracking-widest leading-tight">
             {t.rates.subtitle}
           </p>
         </motion.div>
@@ -112,14 +112,14 @@ const Modalities = () => {
                 )}
               </div>
 
-              <p className="text-white/50 mb-8 md:mb-12 text-base md:text-xl font-bold uppercase italic leading-tight group-hover:text-brand-dark/80">
+              <p className="text-white/50 mb-8 md:mb-12 text-base md:text-xl font-bold italic leading-tight group-hover:text-brand-dark/80">
                 {plan.description}
               </p>
 
               <div className="mt-auto">
                 <ul className="space-y-2 md:space-y-4 mb-8 md:mb-12 border-l-2 border-brand-cyan group-hover:border-brand-dark pl-4 md:pl-8">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="text-[10px] md:text-xs font-black uppercase tracking-tighter group-hover:text-brand-dark">
+                    <li key={feature} className="text-[10px] md:text-xs font-black tracking-tighter group-hover:text-brand-dark">
                       {feature}
                     </li>
                   ))}

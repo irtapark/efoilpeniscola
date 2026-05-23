@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
           <div className="text-3xl font-black italic tracking-tighter uppercase leading-none">
             Peñíscola <br />
-            <span className="text-brand-cyan text-xl">E-foil Experience</span>
+            <span className="text-brand-cyan text-xl">Experiences</span>
           </div>
           
           <div className="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-white/30">
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           <p className="text-white/20 text-[10px] font-black uppercase tracking-widest">
-            © {new Date().getFullYear()} Peñíscola E-foil Experience. {t.footer.rights}
+            © {new Date().getFullYear()} Peñíscola Experiences. {t.footer.rights}
           </p>
         </div>
       </div>
