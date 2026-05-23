@@ -24,7 +24,7 @@ const OtherServices = () => {
       desc: language === 'es' ? 'Desafía la gravedad elevándote sobre el mar con chorros de agua a presión. Siente la adrenalina del vuelo puro.' : language === 'fr' ? 'Défiez la gravité en vous élevant au-dessus de la mer avec des jets d\'eau sous pression. Ressentez l\'adrénaline.' : 'Defy gravity flying above the sea with high-pressure water jets. Experience the adrenaline of pure flight.',
       href: `/${language}/flyboard`,
       tag: language === 'es' ? 'Vuelo y Adrenalina' : language === 'fr' ? 'Vol & Adrénaline' : 'Flight & Adrenaline',
-      image: "/assets/flyboard/hero.png",
+      image: "/assets/flyboard/PHOTO-2026-03-05-13-45-06-22.jpg",
       isAnchor: false
     },
     {

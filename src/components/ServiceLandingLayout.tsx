@@ -103,9 +103,11 @@ const sportMediaMap: Record<string, SportMedia> = {
     ]
   },
   flyboard: {
-    hero: { type: 'image', src: '/assets/flyboard/hero.png' },
+    hero: { type: 'image', src: '/assets/flyboard/PHOTO-2026-03-05-13-45-06-22.jpg' },
     gallery: [
-      { type: 'image', src: '/assets/flyboard/hero.png' }
+      { type: 'image', src: '/assets/flyboard/PHOTO-2026-03-05-13-45-06-22.jpg' },
+      { type: 'image', src: '/assets/flyboard/PHOTO-2026-03-05-13-45-06-21.jpg' },
+      { type: 'image', src: '/assets/flyboard/PHOTO-2026-03-05-13-45-06-18.jpg' }
     ]
   },
   jetski: {
