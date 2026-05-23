@@ -378,17 +378,9 @@ const getRatesDetails = (key: string, lang: Language, p: any) => {
         {
           title: p.rentalDouble,
           price: p.rentalDoublePrice,
-          duration: "3h",
-          desc: isEs ? "Navegación supervisada con equipo completo e intercomunicador." : isFr ? "Navigation supervisée avec équipement complet et radio." : "Supervised riding with full gear and radio intercom.",
+          duration: "1h+",
+          desc: isEs ? "Clases particulares personalizadas para agua o perfeccionamiento. Precio por hora." : isFr ? "Cours particuliers personnalisés pour l'eau ou le perfectionnement. Prix par heure." : "Personalized private lessons for water or advanced skills. Price per hour.",
           icon: <Clock className="w-8 h-8 text-brand-cyan animate-pulse" />,
-          cta: p.ctaBook
-        },
-        {
-          title: p.excursionTitle,
-          price: p.excursionPrice,
-          duration: "3 Horas",
-          desc: p.excursionDesc,
-          icon: <Sun className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook,
           popular: true
         }
