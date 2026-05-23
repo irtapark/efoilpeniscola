@@ -90,8 +90,9 @@ const Navbar = () => {
           </a>
           <a
             href={`/${language}/excursiones`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
+            className="text-brand-cyan hover:text-white transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1.5"
           >
+            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse shrink-0" />
             {t.nav.excursiones}
           </a>
 
@@ -216,9 +217,10 @@ const Navbar = () => {
             </a>
             <a
               href={`/${language}/excursiones`}
-              className="text-white text-lg font-black uppercase italic tracking-tighter"
+              className="text-brand-cyan text-lg font-black uppercase italic tracking-tighter flex items-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
+              <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse shrink-0" />
               {t.nav.excursiones}
             </a>
 
