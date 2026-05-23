@@ -79,9 +79,13 @@ const sportMediaMap: Record<string, SportMedia> = {
     ]
   },
   kitesurf: {
-    hero: { type: 'image', src: '/assets/kitesurf/hero.png' },
+    hero: { type: 'image', src: '/assets/kitesurf/IMG_20190816_164852632.jpg' },
     gallery: [
-      { type: 'image', src: '/assets/kitesurf/hero.png' }
+      { type: 'image', src: '/assets/kitesurf/IMG_20190816_164852632.jpg' },
+      { type: 'image', src: '/assets/kitesurf/IMG-20190414-WA0011.jpg' },
+      { type: 'image', src: '/assets/kitesurf/IMG-20190414-WA0033.jpg' },
+      { type: 'image', src: '/assets/kitesurf/IMG_20180824_194551.jpg' },
+      { type: 'image', src: '/assets/kitesurf/IMG_20200719_182808839.jpg' }
     ]
   },
   wingfoil: {

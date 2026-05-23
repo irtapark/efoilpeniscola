@@ -87,7 +87,7 @@ const OtherServices = () => {
       desc: language === 'es' ? 'Cursos de iniciación y perfeccionamiento en playas de viento constante. Instructores titulados y cometas de última generación.' : language === 'fr' ? 'Cours d\'initiation et de perfectionnement. Moniteurs diplômés et ailes de dernière génération.' : 'Initiation and advanced courses on high-wind beaches. Certified instructors and latest-generation kites.',
       href: `/${language}/kitesurf`,
       tag: language === 'es' ? 'Viento y Cometa' : language === 'fr' ? 'Vol & Cerf-volant' : 'Kite & Flight',
-      image: "/assets/kitesurf/hero.png",
+      image: "/assets/kitesurf/IMG_20190816_164852632.jpg",
       isAnchor: false
     },
     {
