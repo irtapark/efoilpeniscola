@@ -18,24 +18,7 @@ const OtherServices = () => {
       image: "/assets/20210929_104220.jpg",
       isAnchor: true
     },
-    {
-      id: "flyboard",
-      title: s.flyboard.title,
-      desc: language === 'es' ? 'Desafía la gravedad elevándote sobre el mar con chorros de agua a presión. Siente la adrenalina del vuelo puro.' : language === 'fr' ? 'Défiez la gravité en vous élevant au-dessus de la mer avec des jets d\'eau sous pression. Ressentez l\'adrénaline.' : 'Defy gravity flying above the sea with high-pressure water jets. Experience the adrenaline of pure flight.',
-      href: `/${language}/flyboard`,
-      tag: language === 'es' ? 'Vuelo y Adrenalina' : language === 'fr' ? 'Vol & Adrénaline' : 'Flight & Adrenaline',
-      image: "/assets/flyboard/PHOTO-2026-03-05-13-45-06-22.jpg",
-      isAnchor: false
-    },
-    {
-      id: "jetski",
-      title: s.jetski.title,
-      desc: language === 'es' ? 'Alquila motos de agua biplazas de última generación con Nautic Riders. Opciones con monitor (sin licencia) o libre (con licencia).' : language === 'fr' ? 'Louez des jet-skis biplaces de dernière génération avec Nautic Riders. Options avec guide (sans permis) ou libre (avec permis).' : 'Rent latest-generation double jet skis with Nautic Riders. Options with a guide (no license) or free rental (licensed).',
-      href: `/${language}/motos-de-agua`,
-      tag: language === 'es' ? 'Velocidad y Adrenalina' : language === 'fr' ? 'Vitesse & Adrénaline' : 'Speed & Adrenaline',
-      image: "/assets/jetski/hero.png",
-      isAnchor: false
-    },
+
     {
       id: "excursiones",
       title: s.excursiones.title,
@@ -117,15 +100,7 @@ const OtherServices = () => {
       image: "/assets/sup-pilates/activities-pilates-640.jpg",
       isAnchor: false
     },
-    {
-      id: "banana",
-      title: s.banana.title,
-      desc: language === 'es' ? 'La diversión en grupo definitiva. Deslízate a toda velocidad y desafía las olas en un emocionante recorrido en banana boat.' : language === 'fr' ? 'Le divertissement de groupe ultime. Glissez à toute vitesse et défiez les vagues lors d\'un tour passionnant en banana boat.' : 'The ultimate group fun. Glide at full speed and challenge the waves in a thrilling banana boat ride.',
-      href: `/${language}/banana-boat`,
-      tag: language === 'es' ? 'Adrenalina pura' : language === 'fr' ? 'Pure Adrénaline' : 'Pure Adrenaline',
-      image: "/assets/banana/banana_boat_hero.png",
-      isAnchor: false
-    }
+
   ];
 
   return (

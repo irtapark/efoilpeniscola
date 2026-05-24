@@ -36,7 +36,6 @@ const Navbar = () => {
     { name: t.servicesPage.kayak.title, href: `/${language}/kayak` },
     { name: t.servicesPage.windsurf.title, href: `/${language}/windsurf` },
     { name: t.servicesPage.vela.title, href: `/${language}/vela-ligera` },
-    { name: t.servicesPage.banana.title, href: `/${language}/banana-boat` },
     { name: t.servicesPage.kitesurf.title, href: `/${language}/kitesurf` },
     { name: t.servicesPage.wingfoil.title, href: `/${language}/wingsup` },
     { name: t.servicesPage.surf.title, href: `/${language}/surf` },
@@ -76,18 +75,6 @@ const Navbar = () => {
             className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
           >
             eFoil
-          </a>
-          <a
-            href={`/${language}/flyboard`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
-          >
-            Flyboard
-          </a>
-          <a
-            href={`/${language}/motos-de-agua`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
-          >
-            {t.servicesPage.jetski.title}
           </a>
           <a
             href={`/${language}/excursiones`}
@@ -201,20 +188,6 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               eFoil
-            </a>
-            <a
-              href={`/${language}/flyboard`}
-              className="text-white text-lg font-black uppercase italic tracking-tighter"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Flyboard
-            </a>
-            <a
-              href={`/${language}/motos-de-agua`}
-              className="text-white text-lg font-black uppercase italic tracking-tighter"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t.servicesPage.jetski.title}
             </a>
             <a
               href={`/${language}/excursiones`}
