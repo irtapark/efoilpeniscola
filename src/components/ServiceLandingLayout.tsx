@@ -561,8 +561,20 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
         {/* Background Gradient & Pattern */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.15),transparent_60%)]" />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.12),transparent_60%)]" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #7dd3fc 1px, transparent 1px), linear-gradient(-45deg, #7dd3fc 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+        {/* Dynamic Photo Ambilight Glow */}
+        {media?.gallery && media.gallery[activeHeroIndex] && media.gallery[activeHeroIndex].type !== 'video' && (
+          <div 
+            className="absolute inset-0 z-0 opacity-20 md:opacity-[0.28] blur-[100px] md:blur-[140px] scale-125 pointer-events-none transition-all duration-1000 select-none overflow-hidden"
+            style={{
+              backgroundImage: `url(${media.gallery[activeHeroIndex].src})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+            }}
+          />
+        )}
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <motion.div 
@@ -624,7 +636,7 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
           >
             <div 
               onClick={() => openLightbox(activeHeroIndex)}
-              className="aspect-[4/5] bg-gradient-to-tr from-brand-cyan/20 to-brand-blue/10 border-l-4 border-brand-cyan p-2 relative overflow-hidden group shadow-[0_0_50px_rgba(14,165,233,0.1)] cursor-zoom-in"
+              className="aspect-[4/5] bg-gradient-to-tr from-brand-cyan/20 to-brand-blue/10 border-l-4 border-brand-cyan p-2 relative overflow-hidden group shadow-[0_0_50px_rgba(14,165,233,0.08)] hover:shadow-[0_0_60px_rgba(0,209,255,0.3)] hover:border-brand-cyan/60 transition-all duration-500 cursor-zoom-in"
             >
               {/* Media element */}
               {media?.gallery && media.gallery[activeHeroIndex] && (
@@ -808,49 +820,88 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {media.gallery.map((asset, i) => (
+            {media.gallery.length === 1 ? (
+              <div className="max-w-4xl mx-auto">
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  onClick={() => openLightbox(i)}
-                  className="relative aspect-square overflow-hidden bg-brand-dark border border-white/5 group -skew-x-3 hover:skew-x-0 transition-all duration-300 cursor-zoom-in shadow-lg"
+                  onClick={() => openLightbox(0)}
+                  className="relative aspect-video w-full overflow-hidden bg-brand-dark border border-white/10 hover:border-brand-cyan/70 group cursor-zoom-in shadow-2xl transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,209,255,0.2)]"
                 >
-                  {asset.type === "video" ? (
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                    >
-                      <source src={asset.src} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <div 
-                      className="w-full h-full transition-all duration-700 group-hover:scale-110"
-                      style={getHorizonCorrectionStyle(asset.src)}
-                    >
-                      <img
-                        src={asset.src}
-                        alt={`${p.title} Peñíscola ${i + 1}`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-brand-cyan/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-brand-dark/90 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan transform scale-90 group-hover:scale-100 transition-transform">
-                      {asset.type === 'video' ? <Zap size={16} fill="currentColor" className="animate-pulse" /> : <Camera size={16} />}
+                  <div 
+                    className="w-full h-full transition-all duration-700 group-hover:scale-105"
+                    style={getHorizonCorrectionStyle(media.gallery[0].src)}
+                  >
+                    <img
+                      src={media.gallery[0].src}
+                      alt={`${p.title} Peñíscola`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/70 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                    <div className="w-14 h-14 rounded-full bg-brand-dark/95 border border-brand-cyan/40 flex items-center justify-center text-brand-cyan transform scale-90 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                      <Camera size={24} />
                     </div>
                   </div>
                 </motion.div>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px]">
+                {media.gallery.map((asset, i) => {
+                  const isEditorial = (media.gallery.length >= 4 && (i === 0 || i === 4)) || (media.gallery.length < 4 && i === 0);
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 }}
+                      onClick={() => openLightbox(i)}
+                      className={`relative overflow-hidden bg-brand-dark border border-white/10 hover:border-brand-cyan group transition-all duration-500 cursor-zoom-in shadow-xl hover:shadow-[0_0_35px_rgba(0,209,255,0.22)] -skew-x-3 hover:skew-x-0 ${
+                        isEditorial 
+                          ? "col-span-2 row-span-2 aspect-auto" 
+                          : "col-span-1 row-span-1 aspect-auto"
+                      }`}
+                    >
+                      {asset.type === "video" ? (
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                        >
+                          <source src={asset.src} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <div 
+                          className="w-full h-full transition-all duration-700 group-hover:scale-110"
+                          style={getHorizonCorrectionStyle(asset.src)}
+                        >
+                          <img
+                            src={asset.src}
+                            alt={`${p.title} Peñíscola ${i + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                      
+                      {/* Advanced Soft Gradient overlay instead of mix-blend cyan */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-brand-dark/15 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      
+                      <div className="absolute inset-0 bg-black/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+                        <div className="w-12 h-12 rounded-full bg-brand-dark/95 border border-brand-cyan/40 flex items-center justify-center text-brand-cyan transform scale-90 group-hover:scale-100 transition-transform duration-500 shadow-2xl">
+                          {asset.type === 'video' ? <Zap size={20} fill="currentColor" className="animate-pulse" /> : <Camera size={20} />}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </section>
       )}

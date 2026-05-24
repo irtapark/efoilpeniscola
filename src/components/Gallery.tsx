@@ -54,7 +54,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-4 gap-2 space-y-4">
+        <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 space-y-4">
           {assets.map((asset, i) => (
             <motion.div
               key={i}
@@ -62,7 +62,7 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="relative group overflow-hidden bg-brand-dark border border-white/5 break-inside-avoid"
+              className="relative group overflow-hidden bg-brand-dark border border-white/5 hover:border-brand-cyan/70 transition-all duration-500 break-inside-avoid hover:shadow-[0_0_40px_rgba(0,209,255,0.22)]"
             >
               {asset.type === "image" ? (
                 <img
@@ -83,11 +83,11 @@ const Gallery = () => {
                 </video>
               )}
               
-              {/* Radical Overlay */}
-              <div className="absolute inset-0 bg-brand-cyan/40 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Radical Overlay (Soft gradient instead of flat cyan) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/75 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0">
-                <span className="bg-white text-brand-dark px-3 py-1 text-xs font-black uppercase italic italic tracking-tighter">
+              <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
+                <span className="bg-white text-brand-dark px-3 py-1 text-xs font-black uppercase italic tracking-tighter">
                   #FOILEXPERIENCE
                 </span>
               </div>

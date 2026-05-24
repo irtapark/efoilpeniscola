@@ -164,7 +164,7 @@ const OtherServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="h-[360px] md:h-[400px] relative group overflow-hidden border border-white/10 hover:border-brand-cyan transition-all duration-300 shadow-xl"
+              className="h-[420px] md:h-[460px] relative group overflow-hidden border border-white/10 hover:border-brand-cyan/80 hover:-translate-y-1.5 transition-all duration-500 shadow-xl hover:shadow-[0_0_40px_rgba(0,209,255,0.25)]"
             >
               {/* Special highlight tag for eFoil */}
               {act.id === 'efoil' && (
@@ -176,8 +176,8 @@ const OtherServices = () => {
               {/* Background Image Container */}
               <div className="absolute inset-0 z-0 overflow-hidden">
                 <div 
-                  className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-105" 
-                  style={act.image.includes("20230701") ? { transform: "rotate(2.2deg) scale(1.08)" } : {}}
+                  className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-112" 
+                  style={act.image.includes("20230701") ? { transform: "rotate(2.2deg) scale(1.12)" } : {}}
                 >
                   <img
                     src={act.image}
@@ -187,7 +187,7 @@ const OtherServices = () => {
                   />
                 </div>
                 {/* Advanced Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-brand-dark/20 z-10 group-hover:via-brand-dark/50 transition-all duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-brand-dark/10 z-10 group-hover:from-brand-dark/85 group-hover:via-brand-dark/25 group-hover:to-transparent transition-all duration-500" />
               </div>
 
               {/* Content Overlay */}

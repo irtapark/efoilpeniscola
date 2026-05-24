@@ -73,21 +73,23 @@ const Experience = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative mt-12 md:mt-0 w-full h-[500px] md:h-[800px]"
+            className="relative mt-12 md:mt-0 w-full h-[500px] md:h-[800px] group"
           >
             {/* Radical Image Frame */}
-            <div className="absolute -inset-2 md:-inset-4 border-2 border-brand-cyan/20 -rotate-3 z-0" />
+            <div className="absolute -inset-2 md:-inset-4 border-2 border-brand-cyan/20 group-hover:border-brand-cyan/85 group-hover:shadow-[0_0_35px_rgba(0,209,255,0.3)] -rotate-3 group-hover:rotate-0 transition-all duration-700 z-0" />
             
-            <Image
-              src="/assets/IMG-20210629-WA0002.jpg"
-              alt="Radical E-foil Peñíscola"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="rounded-none shadow-2xl object-cover transition-all duration-1000 z-10"
-              priority
-            />
+            <div className="absolute inset-0 w-full h-full overflow-hidden z-10 rounded-none shadow-2xl">
+              <Image
+                src="/assets/IMG-20210629-WA0002.jpg"
+                alt="Radical E-foil Peñíscola"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-[1000ms] group-hover:scale-105"
+                priority
+              />
+            </div>
             
-            <div className="absolute bottom-6 -right-4 md:bottom-10 md:-right-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl rotate-6 z-20">
+            <div className="absolute bottom-6 -right-4 md:bottom-10 md:-right-10 bg-brand-cyan text-brand-dark p-6 md:p-10 font-black uppercase italic tracking-tighter text-2xl md:text-4xl shadow-2xl rotate-6 z-20 group-hover:scale-105 transition-transform duration-500">
               {t.experience.badgeText1} <br /> {t.experience.badgeText2} <br /> {t.experience.badgeText3}
             </div>
           </motion.div>
