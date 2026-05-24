@@ -17,6 +17,10 @@ const Experience = () => {
 
   return (
     <section id="experiencia" className="bg-brand-dark text-white overflow-hidden relative border-t-4 md:border-t-8 border-brand-cyan">
+      {/* Glowing Ambient Lights (Adds Light & Vibrancy) */}
+      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-cyan/20 rounded-full blur-[100px] md:blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[350px] md:w-[750px] h-[350px] md:h-[750px] bg-sky-500/10 rounded-full blur-[120px] md:blur-[180px] pointer-events-none" />
+      
       {/* Radical Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-cyan/5 -skew-x-12 translate-x-32 pointer-events-none" />
       

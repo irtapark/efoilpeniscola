@@ -109,6 +109,15 @@ const OtherServices = () => {
       isAnchor: false
     },
     {
+      id: "sup-pilates",
+      title: s.supPilates.title,
+      desc: language === 'es' ? 'Fuerza, flexibilidad y relajación mental sobre una tabla de paddle surf flotando en el mar.' : language === 'fr' ? 'Force, flexibilité et relaxation sur une planche de paddle surf flottant sur la mer.' : 'Strength, flexibility, and relaxation on a paddle board floating on the sea.',
+      href: `/${language}/sup-pilates`,
+      tag: language === 'es' ? 'Bienestar y Mar' : language === 'fr' ? 'Bien-être & Mer' : 'Wellness & Sea',
+      image: "/assets/sup-pilates/activities-pilates-640.jpg",
+      isAnchor: false
+    },
+    {
       id: "banana",
       title: s.banana.title,
       desc: language === 'es' ? 'La diversión en grupo definitiva. Deslízate a toda velocidad y desafía las olas en un emocionante recorrido en banana boat.' : language === 'fr' ? 'Le divertissement de groupe ultime. Glissez à toute vitesse et défiez les vagues lors d\'un tour passionnant en banana boat.' : 'The ultimate group fun. Glide at full speed and challenge the waves in a thrilling banana boat ride.',

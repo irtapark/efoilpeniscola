@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'kitesurf',
     'wingsup',
     'surf',
+    'sup-pilates',
     'banana-boat',
     'flyboard',
     'motos-de-agua'

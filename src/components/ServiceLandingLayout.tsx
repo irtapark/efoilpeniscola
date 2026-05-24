@@ -14,7 +14,7 @@ import { Language, translations } from "@/translations";
 
 interface ServiceLandingLayoutProps {
   lang: Language;
-  sportKey: 'paddle' | 'kayak' | 'vela' | 'windsurf' | 'excursiones' | 'kitesurf' | 'wingfoil' | 'surf' | 'banana' | 'flyboard' | 'jetski';
+  sportKey: 'paddle' | 'kayak' | 'vela' | 'windsurf' | 'excursiones' | 'kitesurf' | 'wingfoil' | 'surf' | 'banana' | 'flyboard' | 'jetski' | 'supPilates';
 }
 
 interface SportMedia {
@@ -121,6 +121,16 @@ const sportMediaMap: Record<string, SportMedia> = {
     gallery: [
       { type: 'image', src: '/assets/jetski/hero.png' }
     ]
+  },
+  supPilates: {
+    hero: { type: 'image', src: '/assets/sup-pilates/activities-pilates-640.jpg' },
+    gallery: [
+      { type: 'image', src: '/assets/sup-pilates/activities-pilates-640.jpg' },
+      { type: 'image', src: '/assets/sup-pilates/64642229_365296834178086_1723462021746323751_n.jpg' },
+      { type: 'image', src: '/assets/sup-pilates/64882508_149490242837395_8715211809170635162_n.jpg' },
+      { type: 'image', src: '/assets/sup-pilates/65626154_2132855216812030_3243968334405395075_n.jpg' },
+      { type: 'image', src: '/assets/sup-pilates/mj-profile.jpg' }
+    ]
   }
 };
 
@@ -208,6 +218,13 @@ const getFeatureIcons = (key: string) => {
         <Waves key="waves" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
         <Zap key="zap" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan animate-pulse" />,
         <Users key="users" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
+        <ShieldCheck key="shield" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />
+      ];
+    case 'supPilates':
+      return [
+        <Waves key="waves" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
+        <Sun key="sun" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan animate-pulse" />,
+        <Anchor key="anchor" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
         <ShieldCheck key="shield" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />
       ];
     default:
@@ -475,6 +492,22 @@ const getRatesDetails = (key: string, lang: Language, p: any) => {
             : "Free rental for skippers with a valid nautical license. Fuel included, 500€ security deposit required.",
           icon: <Clock className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook
+        }
+      ];
+    case 'supPilates':
+      return [
+        {
+          title: p.rentalSingle,
+          price: p.rentalSinglePrice,
+          duration: "1h",
+          desc: isEs 
+            ? "Encuentra tu equilibrio y fortalece tu core sobre el mar. Sesión de 1h guiada por instructores especializados. Todo el material y fotos incluidos."
+            : isFr 
+            ? "Trouvez votre équilibre et renforcez votre sangle abdominale sur la mer. Séance de 1h guidée par des moniteurs spécialisés. Matériel et photos pro inclus."
+            : "Find your balance and strengthen your core over the sea. 1-hour session guided by specialized instructors. All gear and pro photos included.",
+          icon: <Sun className="w-8 h-8 text-brand-cyan animate-pulse" />,
+          cta: p.ctaBook,
+          popular: true
         }
       ];
     default:

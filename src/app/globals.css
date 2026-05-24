@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #001b2e;   /* Azul Marino Profundo */
+  --color-brand-dark: #00223b;   /* Azul Marino Profundo (más claro) */
   --color-brand-cyan: #0ea5e9;   /* Azul Cielo (Sky 500) - Más suave que el anterior */
   --color-brand-light: #f0faff;  /* Agua Cristalina / Espuma */
   --color-brand-accent: #0ea5e9; 
@@ -12,12 +12,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #001b2e;
+  --foreground: #00223b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #001b2e;
+    --background: #00223b;
     --foreground: #f0faff;
   }
 }

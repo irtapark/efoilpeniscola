@@ -60,6 +60,10 @@ const Modalities = () => {
 
   return (
     <section id="tarifas" className="bg-brand-dark text-white overflow-hidden relative border-t-4 md:border-t-8 border-brand-cyan pb-20 md:pb-40">
+      {/* Glowing Ambient Lights (Adds Light & Illumination) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[800px] h-[350px] md:h-[800px] bg-brand-cyan/15 rounded-full blur-[120px] md:blur-[180px] pointer-events-none" />
+      <div className="absolute top-10 right-10 w-[200px] md:w-[450px] h-[200px] md:h-[450px] bg-sky-500/10 rounded-full blur-[100px] md:blur-[130px] pointer-events-none" />
+
       {/* Radical Pattern */}
       <div className="absolute inset-0 opacity-[0.03] md:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'linear-gradient(45deg, #00d1ff 1px, transparent 1px), linear-gradient(-45deg, #00d1ff 1px, transparent 1px)', backgroundSize: '40px 40px md:60px 60px' }} />
 
@@ -70,11 +74,11 @@ const Modalities = () => {
           viewport={{ once: true }}
           className="mb-12 md:mb-24"
         >
-          <h2 className="text-5xl md:text-[10rem] font-black mb-4 md:mb-6 uppercase italic tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black mb-4 md:mb-6 uppercase italic tracking-tight leading-none">
             {t.rates.title1} <br />
             <span className="text-brand-cyan">{t.rates.title2}</span>
           </h2>
-          <p className="text-white/40 text-lg md:text-2xl max-w-xl font-black italic tracking-widest leading-tight">
+          <p className="text-white/80 text-lg md:text-2xl max-w-xl font-medium tracking-normal leading-relaxed">
             {t.rates.subtitle}
           </p>
         </motion.div>
@@ -87,9 +91,9 @@ const Modalities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col w-full ${
+              className={`relative p-8 md:p-12 rounded-none border-l-4 transition-all hover:bg-brand-cyan group flex flex-col w-full backdrop-blur-sm ${
                 plan.popular 
-                  ? "bg-brand-cyan/20 border-brand-cyan lg:min-h-[650px] lg:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.1)] z-20" 
+                  ? "bg-brand-cyan/20 border-brand-cyan lg:min-h-[650px] lg:-translate-y-12 shadow-[0_0_50px_rgba(0,209,255,0.15)] z-20" 
                   : "bg-white/5 border-white/10 lg:min-h-[600px] z-10"
               }`}
             >
@@ -106,20 +110,20 @@ const Modalities = () => {
               <h3 className="text-2xl md:text-4xl font-black mb-2 md:mb-4 uppercase italic group-hover:text-brand-dark leading-tight">{plan.title}</h3>
               
               <div className="flex items-baseline gap-2 mb-6 md:mb-10">
-                <span className="text-6xl md:text-8xl font-black tracking-tighter group-hover:text-brand-dark">{plan.price}</span>
+                <span className="text-6xl md:text-8xl font-black tracking-tight group-hover:text-brand-dark">{plan.price}</span>
                 {plan.title !== t.rates.pro.title && (
-                  <span className="text-lg md:text-2xl font-black opacity-30 uppercase group-hover:text-brand-dark/50">{t.rates.perPers}</span>
+                  <span className="text-lg md:text-2xl font-black opacity-40 uppercase group-hover:text-brand-dark/50">{t.rates.perPers}</span>
                 )}
               </div>
 
-              <p className="text-white/50 mb-8 md:mb-12 text-base md:text-xl font-bold italic leading-tight group-hover:text-brand-dark/80">
+              <p className="text-white/80 mb-8 md:mb-12 text-base md:text-lg font-bold italic leading-tight group-hover:text-brand-dark/95">
                 {plan.description}
               </p>
 
               <div className="mt-auto">
-                <ul className="space-y-2 md:space-y-4 mb-8 md:mb-12 border-l-2 border-brand-cyan group-hover:border-brand-dark pl-4 md:pl-8">
+                <ul className="space-y-3 md:space-y-4 mb-8 md:mb-12 border-l-2 border-brand-cyan group-hover:border-brand-dark pl-4 md:pl-8">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="text-[10px] md:text-xs font-black tracking-tighter group-hover:text-brand-dark">
+                    <li key={feature} className="text-xs md:text-sm font-bold tracking-normal group-hover:text-brand-dark">
                       {feature}
                     </li>
                   ))}
@@ -139,7 +143,7 @@ const Modalities = () => {
                   {plan.cta}
                 </a>
                 
-                <div className="text-[8px] md:text-[10px] font-black mt-4 md:mt-6 opacity-20 uppercase tracking-[0.2em] group-hover:opacity-100 group-hover:text-brand-dark">
+                <div className="text-[10px] md:text-xs font-bold mt-4 md:mt-6 opacity-40 uppercase tracking-[0.15em] group-hover:opacity-100 group-hover:text-brand-dark">
                    {plan.note} — {plan.duration}
                 </div>
               </div>
