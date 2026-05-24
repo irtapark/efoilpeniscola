@@ -24,15 +24,13 @@ interface SportMedia {
 
 const sportMediaMap: Record<string, SportMedia> = {
   paddle: {
-    hero: { type: 'image', src: '/assets/kayak/IMG_20220807_070521.jpg' },
+    hero: { type: 'image', src: '/assets/paddle-surf/paddle-actividades-hz1080-min.jpg' },
     gallery: [
-      { type: 'image', src: '/assets/kayak/IMG_20220807_070521.jpg' },
-      { type: 'image', src: '/assets/kayak/20230701_063035.jpg' },
-      { type: 'image', src: '/assets/kayak/20230703_100811.jpg' },
-      { type: 'image', src: '/assets/kayak/20230701_063405.jpg' },
-      { type: 'image', src: '/assets/kayak/20230704_102749.jpg' },
-      { type: 'image', src: '/assets/kayak/20230701_063412.jpg' },
-      { type: 'image', src: '/assets/kayak/IMG-20240623-WA0044.jpg' }
+      { type: 'image', src: '/assets/paddle-surf/paddle-actividades-hz1080-min.jpg' },
+      { type: 'image', src: '/assets/paddle-surf/clase-paddle-2-hz1080-min.jpg' },
+      { type: 'image', src: '/assets/paddle-surf/material-paddle-surf-v2-min.jpg' },
+      { type: 'image', src: '/assets/paddle-surf/paddle-surf-banner-1_v1-hz768-min.jpg' },
+      { type: 'image', src: '/assets/paddle-surf/paddle-tour-2-hz1080.jpg' }
     ]
   },
   kayak: {
@@ -123,8 +121,9 @@ const sportMediaMap: Record<string, SportMedia> = {
     ]
   },
   supPilates: {
-    hero: { type: 'image', src: '/assets/sup-pilates/activities-pilates-640.jpg' },
+    hero: { type: 'image', src: '/assets/sup-pilates/sup-yoga-drone-view-3-min.jpg' },
     gallery: [
+      { type: 'image', src: '/assets/sup-pilates/sup-yoga-drone-view-3-min.jpg' },
       { type: 'image', src: '/assets/sup-pilates/activities-pilates-640.jpg' },
       { type: 'image', src: '/assets/sup-pilates/64642229_365296834178086_1723462021746323751_n.jpg' },
       { type: 'image', src: '/assets/sup-pilates/64882508_149490242837395_8715211809170635162_n.jpg' },

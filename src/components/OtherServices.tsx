@@ -51,7 +51,7 @@ const OtherServices = () => {
       desc: language === 'es' ? 'Alquiler libre y las excursiones al amanecer más mágicas de la Costa del Azahar. Tablas premium estables.' : language === 'fr' ? 'Location libre et balades matinales magiques sur la Costa del Azahar. Planches premium et stables.' : 'Free rental and the most magical sunrise tours of the Costa del Azahar. Stable premium boards.',
       href: `/${language}/paddle-surf`,
       tag: s.categoryPaddle,
-      image: "/assets/kayak/IMG_20220807_070521.jpg",
+      image: "/assets/paddle-surf/paddle-actividades-hz1080-min.jpg",
       isAnchor: false
     },
     {
