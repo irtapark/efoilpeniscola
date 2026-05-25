@@ -101,21 +101,23 @@ const Navbar = () => {
             <AnimatePresence>
               {isDropdownOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white border border-slate-200 p-1 w-52 flex flex-col gap-1 shadow-2xl z-50 rounded-none"
+                  exit={{ opacity: 0, y: 6 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-52 z-50"
                 >
-                  {activities.map((act) => (
-                    <a
-                      key={act.name}
-                      href={act.href}
-                      className="text-brand-dark hover:bg-brand-dark hover:text-white transition-all font-black text-[11px] uppercase tracking-[0.12em] italic py-2 px-3 block rounded-none hover:pl-4 duration-200"
-                    >
-                      {act.name}
-                    </a>
-                  ))}
+                  <div className="bg-white border border-slate-200 p-1 flex flex-col gap-1 shadow-2xl rounded-none">
+                    {activities.map((act) => (
+                      <a
+                        key={act.name}
+                        href={act.href}
+                        className="text-brand-dark hover:bg-brand-dark hover:text-white transition-all font-black text-[11px] uppercase tracking-[0.12em] italic py-2 px-3 block rounded-none hover:pl-4 duration-200"
+                      >
+                        {act.name}
+                      </a>
+                    ))}
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
