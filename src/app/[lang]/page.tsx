@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import PromoBanner from "@/components/PromoBanner";
 import Experience from "@/components/Experience";
 import Modalities from "@/components/Modalities";
 import OtherServices from "@/components/OtherServices";
@@ -32,7 +31,6 @@ export default async function Page({ params }: Props) {
     <LanguageProvider defaultLanguage={lang}>
       <main className="min-h-screen bg-brand-dark">
         <Navbar />
-        <PromoBanner />
         <Hero />
         <Experience />
         <Modalities />
