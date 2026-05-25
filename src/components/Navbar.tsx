@@ -43,17 +43,19 @@ const Navbar = () => {
     { code: 'fr', label: 'FR' },
   ];
 
+  const isLight = isScrolled || !isHomepage;
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-        isScrolled || !isHomepage 
+        isLight 
           ? "bg-brand-dark/95 backdrop-blur-md py-4 shadow-lg border-slate-200/50" 
           : "bg-transparent py-6 border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href={`/${language}`} className="flex flex-col group">
-          <div className="text-white font-black text-xl md:text-2xl tracking-tighter leading-none uppercase italic">
+          <div className={`font-black text-xl md:text-2xl tracking-tighter leading-none uppercase italic transition-colors ${isLight ? "text-brand-light" : "text-white"}`}>
             Peñíscola <br />
             <span className="text-brand-cyan text-sm md:text-base">Experiences</span>
           </div>
@@ -63,19 +65,25 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <a
             href={`/${language}`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
+            className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic cursor-pointer ${
+              isLight ? "text-brand-light/80 hover:text-brand-cyan" : "text-white/80 hover:text-brand-cyan"
+            }`}
           >
             {t.nav.home}
           </a>
           <a
             href={`/${language}#experiencia`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
+            className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic cursor-pointer ${
+              isLight ? "text-brand-light/80 hover:text-brand-cyan" : "text-white/80 hover:text-brand-cyan"
+            }`}
           >
             eFoil
           </a>
           <a
             href={`/${language}/excursiones`}
-            className="text-brand-cyan hover:text-white transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1.5"
+            className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1.5 cursor-pointer ${
+              isLight ? "text-brand-cyan hover:text-brand-light" : "text-brand-cyan hover:text-white"
+            }`}
           >
             <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse shrink-0" />
             {t.nav.excursiones}
@@ -89,7 +97,9 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1 cursor-pointer"
+              className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1 cursor-pointer ${
+                isLight ? "text-brand-light/80 hover:text-brand-cyan" : "text-white/80 hover:text-brand-cyan"
+              }`}
             >
               {t.nav.activities}
               <ChevronDown size={12} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-brand-cyan' : ''}`} />
@@ -122,14 +132,16 @@ const Navbar = () => {
 
           <a
             href={`/${language}#contacto`}
-            className="text-white/80 hover:text-brand-cyan transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic"
+            className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic cursor-pointer ${
+              isLight ? "text-brand-light/80 hover:text-brand-cyan" : "text-white/80 hover:text-brand-cyan"
+            }`}
           >
             {t.nav.contact}
           </a>
 
           {/* Language Switcher */}
           <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-1">
-            <Globe size={14} className="text-white/40" />
+            <Globe size={14} className={isLight ? "text-brand-light/40" : "text-white/40"} />
             {languages.map((lang) => (
               <button
                 key={lang.code}
@@ -137,8 +149,10 @@ const Navbar = () => {
                   setLanguage(lang.code);
                   router.push(`/${lang.code}`);
                 }}
-                className={`text-[10px] font-black tracking-widest px-2 py-1 rounded cursor-pointer ${
-                  language === lang.code ? "bg-brand-cyan text-brand-dark" : "text-white/40 hover:text-white"
+                className={`text-[10px] font-black tracking-widest px-2 py-1 rounded cursor-pointer transition-colors ${
+                  language === lang.code 
+                    ? (isLight ? "bg-brand-cyan text-white" : "bg-brand-cyan text-brand-dark") 
+                    : (isLight ? "text-brand-light/40 hover:text-brand-light" : "text-white/40 hover:text-white")
                 }`}
               >
                 {lang.label}
@@ -157,7 +171,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white cursor-pointer"
+          className={`md:hidden cursor-pointer transition-colors ${isLight ? "text-brand-light" : "text-white"}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -172,7 +186,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-brand-dark absolute top-full left-0 w-full p-6 border-t border-white/10 flex flex-col gap-6 overflow-hidden z-40"
+            className="md:hidden bg-[#00223b] absolute top-full left-0 w-full p-6 border-t border-white/10 flex flex-col gap-6 overflow-hidden z-40 shadow-2xl"
           >
             <a
               href={`/${language}`}
