@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #fafbfc;   /* Fondo Claro Arena / Blanco Suave */
+  --color-brand-dark: #00223b;   /* Azul Marino Profundo (Dark) */
   --color-brand-cyan: #0284c7;   /* Azul Turquesa / Cielo Intenso (Sky 600) para lectura */
-  --color-brand-light: #00223b;  /* Invertido: Texto Azul Marino Profundo */
+  --color-brand-light: #fafbfc;  /* Fondo Claro Arena / Blanco Suave (Light) */
   --color-brand-accent: #0284c7; 
   
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
@@ -77,37 +77,9 @@ section:not(.h-\[100dvh\]):not(footer) .text-brand-cyan {
   color: #0284c7 !important;
 }
 
-/* Radically adjust the eFoil star experience highlight tag on light backgrounds */
-section:not(.h-\[100dvh\]):not(footer) .bg-brand-cyan.text-brand-dark {
-  background-color: #0284c7 !important;
-  color: #ffffff !important;
-}
-
-/* Keep the lightbox modal text white and highly legible */
-.lightbox-modal, .lightbox-modal * {
-  color: #ffffff !important;
-}
-
-/* Scrolled/Subpage Navbar styling overrides when using bg-brand-dark/95 (light background) */
-nav.bg-brand-dark\/95, 
-nav.bg-brand-dark\/95 * {
-  color: #00223b !important;
-}
-nav.bg-brand-dark\/95 .text-white\/80 {
-  color: rgba(0, 34, 59, 0.82) !important;
-}
-nav.bg-brand-dark\/95 a:hover, 
-nav.bg-brand-dark\/95 button:hover {
-  color: #0284c7 !important;
-}
-nav.bg-brand-dark\/95 .border-white\/10 {
-  border-color: rgba(0, 34, 59, 0.08) !important;
-}
-
-/* Active indicator point and cian tags inside light navbar */
-nav.bg-brand-dark\/95 .text-brand-cyan,
-nav.bg-brand-dark\/95 .bg-brand-cyan {
-  color: #0284c7 !important;
+/* Main page wrappers and sections with bg-brand-dark should render as clear sand white */
+.bg-brand-dark:not(footer):not(nav):not(.md\:hidden):not(section.h-\[100dvh\]) {
+  background-color: #fafbfc !important;
 }
 
 /* Grounding Footer Styling in dark navy to anchor the visual balance */
