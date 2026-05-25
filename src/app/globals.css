@@ -128,3 +128,8 @@ footer a:hover {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   color: transparent;
 }
+
+/* Disable italics globally across the entire website */
+* {
+  font-style: normal !important;
+}
