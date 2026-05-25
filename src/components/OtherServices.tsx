@@ -29,6 +29,15 @@ const OtherServices = () => {
       isAnchor: false
     },
     {
+      id: "colegios",
+      title: s.colegios.title,
+      desc: language === 'es' ? 'Excursiones escolares y multiaventura náutica a medida. Rutas guiadas, paddle surf, vela ligera y windsurf adaptados para colegios y grupos.' : language === 'fr' ? 'Sorties scolaires et multi-activités nautiques sur mesure. Balades guidées, paddle surf, voile et planche à voile adaptés.' : 'Tailored school trips and nautical multi-adventure. Guided tours, paddle surf, sailing, and windsurfing for schools and groups.',
+      href: `/${language}/colegios-y-grupos`,
+      tag: language === 'es' ? 'Colegios y Grupos' : language === 'fr' ? 'Écoles & Groupes' : 'Schools & Groups',
+      image: "/assets/kayak/20240615_123240.jpg",
+      isAnchor: false
+    },
+    {
       id: "paddle",
       title: s.paddle.title,
       desc: language === 'es' ? 'Alquiler libre y las excursiones al amanecer más mágicas de la Costa del Azahar. Tablas premium estables.' : language === 'fr' ? 'Location libre et balades matinales magiques sur la Costa del Azahar. Planches premium et stables.' : 'Free rental and the most magical sunrise tours of the Costa del Azahar. Stable premium boards.',

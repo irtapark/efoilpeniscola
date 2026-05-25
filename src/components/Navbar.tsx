@@ -35,6 +35,7 @@ const Navbar = () => {
     { name: t.servicesPage.wingfoil.title, href: `/${language}/wingsup` },
     { name: t.servicesPage.surf.title, href: `/${language}/surf` },
     { name: t.servicesPage.supPilates.title, href: `/${language}/sup-pilates` },
+    { name: t.servicesPage.colegios.title, href: `/${language}/colegios-y-grupos` },
   ];
 
   const languages: { code: Language; label: string }[] = [
@@ -87,6 +88,15 @@ const Navbar = () => {
           >
             <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse shrink-0" />
             {t.nav.excursiones}
+          </a>
+          <a
+            href={`/${language}/colegios-y-grupos`}
+            className={`transition-colors font-black text-[9px] lg:text-[10px] uppercase tracking-[0.15em] italic flex items-center gap-1.5 cursor-pointer ${
+              isLight ? "text-brand-cyan hover:text-brand-light" : "text-brand-cyan hover:text-white"
+            }`}
+          >
+            <span className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse shrink-0" />
+            {t.servicesPage.colegios.title}
           </a>
 
           {/* Premium Activities Dropdown */}
@@ -209,6 +219,14 @@ const Navbar = () => {
             >
               <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse shrink-0" />
               {t.nav.excursiones}
+            </a>
+            <a
+              href={`/${language}/colegios-y-grupos`}
+              className="text-brand-cyan text-lg font-black uppercase italic tracking-tighter flex items-center gap-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse shrink-0" />
+              {t.servicesPage.colegios.title}
             </a>
 
             {/* Mobile Activities Accordion */}

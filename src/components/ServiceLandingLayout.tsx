@@ -14,7 +14,7 @@ import { Language, translations } from "@/translations";
 
 interface ServiceLandingLayoutProps {
   lang: Language;
-  sportKey: 'paddle' | 'kayak' | 'vela' | 'windsurf' | 'excursiones' | 'kitesurf' | 'wingfoil' | 'surf' | 'banana' | 'flyboard' | 'jetski' | 'supPilates';
+  sportKey: 'paddle' | 'kayak' | 'vela' | 'windsurf' | 'excursiones' | 'kitesurf' | 'wingfoil' | 'surf' | 'banana' | 'flyboard' | 'jetski' | 'supPilates' | 'colegios';
 }
 
 interface SportMedia {
@@ -130,6 +130,16 @@ const sportMediaMap: Record<string, SportMedia> = {
       { type: 'image', src: '/assets/sup-pilates/65626154_2132855216812030_3243968334405395075_n.jpg' },
       { type: 'image', src: '/assets/sup-pilates/mj-profile.jpg' }
     ]
+  },
+  colegios: {
+    hero: { type: 'image', src: '/assets/kayak/20240615_123240.jpg' },
+    gallery: [
+      { type: 'image', src: '/assets/kayak/20240615_123240.jpg' },
+      { type: 'image', src: '/assets/vela-ligera/20240624_104654.jpg' },
+      { type: 'image', src: '/assets/paddle-surf/clase-paddle-2-hz1080-min.jpg' },
+      { type: 'image', src: '/assets/kayak/20230704_102749.jpg' },
+      { type: 'image', src: '/assets/kayak/IMG-20230819-WA0000.jpg' }
+    ]
   }
 };
 
@@ -225,6 +235,13 @@ const getFeatureIcons = (key: string) => {
         <Sun key="sun" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan animate-pulse" />,
         <Anchor key="anchor" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
         <ShieldCheck key="shield" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />
+      ];
+    case 'colegios':
+      return [
+        <ShieldCheck key="shield" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
+        <LifeBuoy key="buoy" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
+        <Users key="users" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />,
+        <Anchor key="anchor" className="w-8 h-8 md:w-10 md:h-10 text-brand-cyan" />
       ];
     default:
       return [
@@ -505,6 +522,70 @@ const getRatesDetails = (key: string, lang: Language, p: Record<string, string>)
             ? "Trouvez votre équilibre et renforcez votre sangle abdominale sur la mer. Séance de 1h guidée par des moniteurs spécialisés. Matériel et photos pro inclus."
             : "Find your balance and strengthen your core over the sea. 1-hour session guided by specialized instructors. All gear and pro photos included.",
           icon: <Sun className="w-8 h-8 text-brand-cyan animate-pulse" />,
+          cta: p.ctaBook,
+          popular: true
+        }
+      ];
+    case 'colegios':
+      return [
+        {
+          title: isEs ? "Rutas en Kayak" : isFr ? "Balades en Kayak" : "Kayak Tours",
+          price: isEs ? "A medida" : isFr ? "Sur mesure" : "Custom",
+          duration: "1.5h - 2h",
+          desc: isEs 
+            ? "Excursiones guiadas perfectas para explorar la costa, fomentando la coordinación y el compañerismo."
+            : isFr 
+            ? "Sorties guidées parfaites pour explorer la côte, favorisant la coordination et la camaraderie."
+            : "Guided excursions perfect for exploring the coast, promoting coordination and companionship.",
+          icon: <Compass className="w-8 h-8 text-brand-cyan" />,
+          cta: p.ctaBook
+        },
+        {
+          title: isEs ? "Paddle Surf (SUP)" : isFr ? "Paddle Surf (SUP)" : "Paddle Surf (SUP)",
+          price: isEs ? "A medida" : isFr ? "Sur mesure" : "Custom",
+          duration: "1.5h - 2h",
+          desc: isEs 
+            ? "Clases prácticas de equilibrio y navegación en aguas tranquilas. ¡Las risas y los chapuzones están asegurados!"
+            : isFr 
+            ? "Cours pratiques d'équilibre et de navigation en eaux calmes. Rires et baignades garantis !"
+            : "Practical lessons of balance and navigation in calm waters. Laughs and splashes are guaranteed!",
+          icon: <Waves className="w-8 h-8 text-brand-cyan" />,
+          cta: p.ctaBook
+        },
+        {
+          title: isEs ? "Bautismo de Vela Ligera" : isFr ? "Baptême de Voile" : "Sailing Introduction",
+          price: isEs ? "A medida" : isFr ? "Sur mesure" : "Custom",
+          duration: "1.5h - 2h",
+          desc: isEs 
+            ? "La mejor introducción a la navegación a vela. Los alumnos aprenderán a interpretar el viento y manejar la embarcación en equipo."
+            : isFr 
+            ? "La meilleure introduction à la voile. Les élèves apprendront à interpréter le vent et à diriger le bateau en équipe."
+            : "The best introduction to sailing. Students will learn to interpret the wind and handle the boat as a team.",
+          icon: <Wind className="w-8 h-8 text-brand-cyan" />,
+          cta: p.ctaBook
+        },
+        {
+          title: isEs ? "Iniciación al Windsurf" : isFr ? "Windsurf" : "Windsurfing",
+          price: isEs ? "A medida" : isFr ? "Sur mesure" : "Custom",
+          duration: "1.5h - 2h",
+          desc: isEs 
+            ? "Clases dinámicas para dominar la tabla y la vela de forma progresiva y segura."
+            : isFr 
+            ? "Cours dynamiques pour maîtriser la planche et la voile de manière progressive et sécurisée."
+            : "Dynamic lessons to master the board and sail progressively and safely.",
+          icon: <Anchor className="w-8 h-8 text-brand-cyan" />,
+          cta: p.ctaBook
+        },
+        {
+          title: isEs ? "Multiaventura Acuática" : isFr ? "Multi-aventure Aquatique" : "Water Multi-adventure",
+          price: isEs ? "A medida" : isFr ? "Sur mesure" : "Custom",
+          duration: isEs ? "Media Jornada" : isFr ? "Demi-journée" : "Half Day",
+          desc: isEs 
+            ? "Diseñamos circuitos a medida combinando diferentes deportes náuticos para que los grupos prueben de todo en una misma mañana."
+            : isFr 
+            ? "Nous concevons des circuits sur mesure combinant différents sports nautiques pour que les groupes puissent tout essayer en une matinée."
+            : "We design custom circuits combining different water sports so that groups can try everything in the same morning.",
+          icon: <LifeBuoy className="w-8 h-8 text-brand-cyan animate-pulse" />,
           cta: p.ctaBook,
           popular: true
         }

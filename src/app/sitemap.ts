@@ -12,7 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'kitesurf',
     'wingsup',
     'surf',
-    'sup-pilates'
+    'sup-pilates',
+    'colegios-y-grupos'
   ];
 
   const sitemapEntries: MetadataRoute.Sitemap = [
