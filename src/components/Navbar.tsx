@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Globe, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Language } from "@/translations";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -15,6 +15,8 @@ const Navbar = () => {
   
   const { language, setLanguage, t } = useLanguage();
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomepage = pathname === `/${language}` || pathname === `/${language}/` || pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,8 +52,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-brand-dark/95 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
+        isScrolled || !isHomepage 
+          ? "bg-brand-dark/95 backdrop-blur-md py-4 shadow-lg border-slate-200/50" 
+          : "bg-transparent py-6 border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
