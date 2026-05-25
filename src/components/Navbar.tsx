@@ -26,13 +26,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: t.nav.home, href: `/${language}` },
-    { name: "eFoil", href: `/${language}#experiencia` },
-    { name: t.nav.excursiones, href: `/${language}/excursiones` },
-    { name: t.nav.contact, href: `/${language}#contacto` },
-  ];
-
   const activities = [
     { name: t.servicesPage.paddle.title, href: `/${language}/paddle-surf` },
     { name: t.servicesPage.kayak.title, href: `/${language}/kayak` },

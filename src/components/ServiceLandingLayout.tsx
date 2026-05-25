@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Anchor, Sun, Camera, Compass, ShieldCheck, Clock, Zap, ArrowRight,
@@ -236,7 +236,7 @@ const getFeatureIcons = (key: string) => {
   }
 };
 
-const getRatesDetails = (key: string, lang: Language, p: any) => {
+const getRatesDetails = (key: string, lang: Language, p: Record<string, string>) => {
   const isEs = lang === 'es';
   const isFr = lang === 'fr';
 
@@ -522,9 +522,11 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
   const [activeMediaIndex, setActiveMediaIndex] = useState<number | null>(null);
   const [activeHeroIndex, setActiveHeroIndex] = useState<number>(0);
 
-  useEffect(() => {
+  const [prevSportKey, setPrevSportKey] = useState(sportKey);
+  if (sportKey !== prevSportKey) {
+    setPrevSportKey(sportKey);
     setActiveHeroIndex(0);
-  }, [sportKey]);
+  }
 
   const openLightbox = (index: number) => {
     setActiveMediaIndex(index);

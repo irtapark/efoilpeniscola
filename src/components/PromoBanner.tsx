@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Zap } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 
 const PromoBanner = () => {
-  const { t } = useLanguage();
 
   return (
     <section className="relative w-full overflow-hidden bg-brand-dark">

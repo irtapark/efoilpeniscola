@@ -12,21 +12,21 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children, defaultLanguage }: { children: ReactNode; defaultLanguage?: Language }) => {
-  const [language, setLanguage] = useState<Language>(defaultLanguage || 'es');
+  const [languageState, setLanguageState] = useState<Language>('es');
+
+  const language = defaultLanguage || languageState;
 
   useEffect(() => {
-    if (defaultLanguage) {
-      setLanguage(defaultLanguage);
-    } else {
+    if (!defaultLanguage) {
       const savedLang = localStorage.getItem('preferred-lang') as Language;
       if (savedLang && (savedLang === 'es' || savedLang === 'en' || savedLang === 'fr')) {
-        setLanguage(savedLang);
+        setTimeout(() => setLanguageState(savedLang), 0);
       }
     }
   }, [defaultLanguage]);
 
   const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
+    setLanguageState(lang);
     localStorage.setItem('preferred-lang', lang);
   };
 
