@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SupPackConfigurator from "@/components/SupPackConfigurator";
 import { Language, translations } from "@/translations";
 
 interface ServiceLandingLayoutProps {
@@ -878,6 +879,18 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
               </motion.div>
             ))}
           </div>
+
+          {/* Render interactive SUP pack configurator only for paddle surf */}
+          {sportKey === "paddle" && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <SupPackConfigurator lang={lang} />
+            </motion.div>
+          )}
         </div>
       </section>
 
