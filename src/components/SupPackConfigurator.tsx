@@ -12,10 +12,8 @@ type DurationType = "1day" | "2days" | "3days" | "1week" | "2weeks";
 
 export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) {
   const [duration, setDuration] = useState<DurationType>("1day");
-  const [bag, setBag] = useState(false);
-  const [canister, setCanister] = useState(false);
-  const [electricPump, setElectricPump] = useState(false);
-  const [electricMotor, setElectricMotor] = useState(false);
+  const [leash, setLeash] = useState(false);
+  const [vest, setVest] = useState(false);
 
   const isEs = lang === "es";
   const isFr = lang === "fr";
@@ -48,10 +46,8 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
   const basePrice = basePrices[duration];
 
   let extrasPrice = 0;
-  if (bag) extrasPrice += 3 * days;
-  if (canister) extrasPrice += 3 * days;
-  if (electricPump) extrasPrice += 15 * days;
-  if (electricMotor) extrasPrice += 20 * days;
+  if (leash) extrasPrice += 3 * days;
+  if (vest) extrasPrice += 5 * days;
 
   const totalPrice = basePrice + extrasPrice;
 
@@ -63,30 +59,24 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
     let message = "";
 
     if (isEs) {
-      message = `¡Hola! Quiero reservar el Pack SUP Hinchable por Días en Peñíscola Experiences. Mi configuración es la siguiente:\n` +
+      message = `¡Hola! Quiero reservar el Pack SUP Rígido por Días en Peñíscola Experiences. Mi configuración es la siguiente:\n` +
                 `- Duración: ${currentDurationLabel} (${days} días)\n` +
-                `- Bolsa Estanca: ${bag ? "Sí (+3€/día)" : "No"}\n` +
-                `- Bidón Estanco: ${canister ? "Sí (+3€/día)" : "No"}\n` +
-                `- Hinchador Eléctrico: ${electricPump ? "Sí (+15€/día)" : "No"}\n` +
-                `- Motor Eléctrico de Hélice: ${electricMotor ? "Sí (+20€/día)" : "No"}\n` +
+                `- Leash (Invento): ${leash ? "Sí (+3€/día)" : "No"}\n` +
+                `- Chaleco Salvavidas: ${vest ? "Sí (+5€/día)" : "No"}\n` +
                 `- Precio Total Estimado: ${totalPrice}€\n` +
                 `Por favor, confirmadme disponibilidad. ¡Gracias!`;
     } else if (isFr) {
-      message = `Bonjour ! Je souhaite réserver le Pack SUP Gonflable par Jours chez Peñíscola Experiences. Ma configuration est :\n` +
+      message = `Bonjour ! Je souhaite réserver le Pack SUP Rigide par Jours chez Peñíscola Experiences. Ma configuration est :\n` +
                 `- Durée : ${currentDurationLabel} (${days} jours)\n` +
-                `- Sac Étanche : ${bag ? "Oui (+3€/jour)" : "Non"}\n` +
-                `- Bidon Étanche : ${canister ? "Oui (+3€/jour)" : "Non"}\n` +
-                `- Gonfleur Électrique : ${electricPump ? "Oui (+15€/jour)" : "Non"}\n` +
-                `- Moteur Électrique d'Hélice : ${electricMotor ? "Oui (+20€/jour)" : "Non"}\n` +
+                `- Leash (Leash de sécurité) : ${leash ? "Oui (+3€/jour)" : "Non"}\n` +
+                `- Gilet de Sauvetage : ${vest ? "Oui (+5€/jour)" : "Non"}\n` +
                 `- Prix Total Estimé : ${totalPrice}€\n` +
                 `Merci de me confirmer la disponibilité.`;
     } else {
-      message = `Hello! I would like to book the Inflatable SUP Pack by Days at Peñíscola Experiences. My configuration is:\n` +
+      message = `Hello! I would like to book the Rigid SUP Pack by Days at Peñíscola Experiences. My configuration is:\n` +
                 `- Duration: ${currentDurationLabel} (${days} days)\n` +
-                `- Dry Bag: ${bag ? "Yes (+3€/day)" : "No"}\n` +
-                `- Waterproof Canister: ${canister ? "Yes (+3€/day)" : "No"}\n` +
-                `- Electric Pump: ${electricPump ? "Yes (+15€/day)" : "No"}\n` +
-                `- Electric Propeller Motor: ${electricMotor ? "Yes (+20€/day)" : "No"}\n` +
+                `- Leash (Safety leash): ${leash ? "Yes (+3€/day)" : "No"}\n` +
+                `- Life Vest: ${vest ? "Yes (+5€/day)" : "No"}\n` +
                 `- Estimated Total Price: ${totalPrice}€\n` +
                 `Please confirm availability. Thank you!`;
     }
@@ -104,17 +94,17 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
       <div className="relative z-20">
         <h3 className="text-2xl md:text-4xl font-black mb-3 uppercase italic leading-none text-brand-dark">
           {isEs 
-            ? "Configura tu Pack SUP Hinchable" 
+            ? "Configura tu Pack SUP Rígido" 
             : isFr 
-            ? "Configurez Votre Pack SUP Gonflable" 
-            : "Configure Your Inflatable SUP Pack"}
+            ? "Configurez Votre Pack SUP Rigide" 
+            : "Configure Your Rigid SUP Pack"}
         </h3>
         <p className="text-[#4b5563] text-sm md:text-base font-bold mb-8 leading-relaxed">
           {isEs
-            ? "Llévate el equipo completo a tu hotel, apartamento o camping en Peñíscola. Organiza tus excursiones libres con total flexibilidad."
+            ? "Llévate el equipo rígido de gama alta a tu hotel, apartamento o camping en Peñíscola. Organiza tus excursiones libres con total flexibilidad."
             : isFr
-            ? "Emportez l'équipement complet dans votre hôtel, appartement ou camping à Peñíscola. Organisez vos sorties libres en toute flexibilité."
-            : "Take the complete gear to your hotel, apartment, or campsite in Peñíscola. Organize your free paddling tours with total flexibility."}
+            ? "Emportez l'équipement rigide haut de gamme dans votre hôtel, appartement ou camping à Peñíscola. Organisez vos sorties libres en toute flexibilité."
+            : "Take the premium rigid gear to your hotel, apartment, or campsite in Peñíscola. Organize your free paddling tours with total flexibility."}
         </p>
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">
@@ -151,19 +141,11 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
               <ul className="space-y-2 text-[#374151] text-xs font-bold">
                 <li className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-brand-cyan shrink-0" />
-                  {isEs ? "Tabla SUP Itiwit hinchable 10'6\"" : isFr ? "Planche SUP Itiwit gonflable 10'6\"" : "Itiwit inflatable 10'6\" SUP board"}
+                  {isEs ? "Tabla de SUP rígida premium de alta estabilidad" : isFr ? "Planche de SUP rigide premium très stable" : "Premium rigid SUP board with high stability"}
                 </li>
                 <li className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-brand-cyan shrink-0" />
-                  {isEs ? "Remo ajustable de aluminio" : isFr ? "Pagaie réglable en aluminium" : "Adjustable aluminum paddle"}
-                </li>
-                <li className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-brand-cyan shrink-0" />
-                  {isEs ? "Hinchador manual y leash de seguridad" : isFr ? "Gonfleur manuel et leash de sécurité" : "Manual pump and safety leash"}
-                </li>
-                <li className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-brand-cyan shrink-0" />
-                  {isEs ? "Chaleco salvavidas de flotabilidad" : isFr ? "Gilet d'aide à la flottabilité" : "Buoyancy safety life vest"}
+                  {isEs ? "Remo ajustable de aluminio de alta gama" : isFr ? "Pagaie réglable en aluminium haut de gamme" : "High-end adjustable aluminum paddle"}
                 </li>
               </ul>
             </div>
@@ -176,24 +158,24 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
                 {isEs ? "2. Accesorios Opcionales" : isFr ? "2. Accessoires Optionnels" : "2. Optional Accessories"}
               </h4>
               <div className="space-y-3">
-                {/* Dry Bag */}
+                {/* Leash */}
                 <div 
-                  onClick={() => setBag(!bag)} 
+                  onClick={() => setLeash(!leash)} 
                   className={`flex justify-between items-center p-4 border cursor-pointer select-none transition-all duration-300 ${
-                    bag ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
+                    leash ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
                   }`}
                 >
                   <div>
                     <h5 className="font-black text-xs md:text-sm text-brand-dark mb-0.5">
-                      {isEs ? "Bolsa Estanca (5L)" : isFr ? "Sac Étanche (5L)" : "Dry Bag (5L)"}
+                      {isEs ? "Leash (Invento)" : isFr ? "Leash de Sécurité" : "Leash (Safety Leash)"}
                     </h5>
                     <p className="text-[10px] md:text-xs text-[#6b7280] font-bold">
-                      {isEs ? "Móvil y objetos secos" : isFr ? "Téléphone et objets secs" : "Phone and dry items"}
+                      {isEs ? "Cinta de seguridad para el tobillo" : isFr ? "Cordon de sécurité pour cheville" : "Safety cord for the ankle"}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="font-black text-xs md:text-sm text-brand-dark">+3€/día</span>
-                    {bag ? (
+                    {leash ? (
                       <ToggleRight className="w-8 h-8 text-brand-cyan" />
                     ) : (
                       <ToggleLeft className="w-8 h-8 text-[#9ca3af]" />
@@ -201,74 +183,24 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
                   </div>
                 </div>
 
-                {/* Canister */}
+                {/* Safety Vest */}
                 <div 
-                  onClick={() => setCanister(!canister)} 
+                  onClick={() => setVest(!vest)} 
                   className={`flex justify-between items-center p-4 border cursor-pointer select-none transition-all duration-300 ${
-                    canister ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
+                    vest ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
                   }`}
                 >
                   <div>
                     <h5 className="font-black text-xs md:text-sm text-brand-dark mb-0.5">
-                      {isEs ? "Bidón Rígido Estanco (5L)" : isFr ? "Bidon Étanche (5L)" : "Waterproof Canister (5L)"}
+                      {isEs ? "Chaleco Salvavidas" : isFr ? "Gilet de Sauvetage" : "Life Vest"}
                     </h5>
                     <p className="text-[10px] md:text-xs text-[#6b7280] font-bold">
-                      {isEs ? "Protección rígida contra golpes" : isFr ? "Protection rigide" : "Rigid crushproof protection"}
+                      {isEs ? "Chaleco de flotabilidad homologado" : isFr ? "Gilet d'aide à la flottabilité homologué" : "Approved buoyancy safety vest"}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="font-black text-xs md:text-sm text-brand-dark">+3€/día</span>
-                    {canister ? (
-                      <ToggleRight className="w-8 h-8 text-brand-cyan" />
-                    ) : (
-                      <ToggleLeft className="w-8 h-8 text-[#9ca3af]" />
-                    )}
-                  </div>
-                </div>
-
-                {/* Electric Pump */}
-                <div 
-                  onClick={() => setElectricPump(!electricPump)} 
-                  className={`flex justify-between items-center p-4 border cursor-pointer select-none transition-all duration-300 ${
-                    electricPump ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
-                  }`}
-                >
-                  <div>
-                    <h5 className="font-black text-xs md:text-sm text-brand-dark mb-0.5">
-                      {isEs ? "Hinchador Eléctrico" : isFr ? "Gonfleur Électrique" : "Electric Pump"}
-                    </h5>
-                    <p className="text-[10px] md:text-xs text-[#6b7280] font-bold">
-                      {isEs ? "Conexión a mechero del coche" : isFr ? "Prise allume-cigare de voiture" : "Connects to car lighter plug"}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="font-black text-xs md:text-sm text-brand-dark">+15€/día</span>
-                    {electricPump ? (
-                      <ToggleRight className="w-8 h-8 text-brand-cyan" />
-                    ) : (
-                      <ToggleLeft className="w-8 h-8 text-[#9ca3af]" />
-                    )}
-                  </div>
-                </div>
-
-                {/* Electric Motor */}
-                <div 
-                  onClick={() => setElectricMotor(!electricMotor)} 
-                  className={`flex justify-between items-center p-4 border cursor-pointer select-none transition-all duration-300 ${
-                    electricMotor ? "bg-brand-cyan/5 border-brand-cyan" : "bg-[#fafbfc] border-[#e5e7eb] hover:border-brand-cyan/40"
-                  }`}
-                >
-                  <div>
-                    <h5 className="font-black text-xs md:text-sm text-brand-dark mb-0.5">
-                      {isEs ? "Motor Eléctrico Itiwit Assist" : isFr ? "Moteur Électrique d'Hélice" : "Electric Propeller Motor"}
-                    </h5>
-                    <p className="text-[10px] md:text-xs text-[#6b7280] font-bold">
-                      {isEs ? "Asistencia al paleo con mando" : isFr ? "Assistance avec télécommande" : "Propelled fin with remote control"}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="font-black text-xs md:text-sm text-brand-dark">+20€/día</span>
-                    {electricMotor ? (
+                    <span className="font-black text-xs md:text-sm text-brand-dark">+5€/día</span>
+                    {vest ? (
                       <ToggleRight className="w-8 h-8 text-brand-cyan" />
                     ) : (
                       <ToggleLeft className="w-8 h-8 text-[#9ca3af]" />
