@@ -85,10 +85,10 @@ export default function SupPackConfigurator({ lang }: SupPackConfiguratorProps) 
   };
 
   return (
-    <div className="bg-white border-2 border-brand-cyan/20 p-6 md:p-10 shadow-2xl relative overflow-hidden rounded-none max-w-4xl mx-auto my-12">
+    <div className="bg-white border-4 border-brand-cyan p-6 md:p-10 shadow-[0_0_50px_rgba(0,209,255,0.4)] relative overflow-hidden rounded-none max-w-4xl mx-auto my-16 transform transition-all duration-500 hover:scale-[1.02]">
       {/* Decathlon highlighted banner */}
-      <span className="absolute top-0 right-0 bg-[#0082C3] text-white px-4 py-1.5 font-black uppercase text-[9px] tracking-widest z-30 shadow-md">
-        {isEs ? "NUEVO: PACK POR DÍAS" : isFr ? "NOUVEAU: PACK PAR JOURS" : "NEW: MULTI-DAY PACK"}
+      <span className="absolute top-0 right-0 bg-brand-cyan text-brand-dark px-6 py-2 font-black uppercase text-[10px] md:text-xs tracking-[0.2em] z-30 shadow-lg animate-pulse">
+        {isEs ? "🌟 DESTACADO: PACK POR DÍAS" : isFr ? "🌟 EN VEDETTE: PACK PAR JOURS" : "🌟 FEATURED: MULTI-DAY PACK"}
       </span>
 
       <div className="relative z-20">

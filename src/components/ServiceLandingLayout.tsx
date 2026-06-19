@@ -391,10 +391,10 @@ const getRatesDetails = (key: string, lang: Language, p: Record<string, string>)
           price: p.rentalDoublePrice,
           duration: "1h 30m",
           desc: isEs 
-            ? "En kayak o paddle surf. Ruta alrededor del castillo, grutas, snorkel y parada didáctica sobre la historia del Papa Luna. Más de 4 personas: 25€/pers; más de 10 personas: 20€/pers." 
+            ? "En kayak o paddle surf. Ruta alrededor del castillo, grutas, snorkel y parada didáctica sobre la historia del Papa Luna. Precio único: 30€/pers. Grupos de 10 o más: 25€/pers." 
             : isFr 
-            ? "En kayak ou paddle surf. Randonnée autour du château, grottes, snorkel et arrêt didactique contant l'histoire de Pape Luna. Plus de 4 personnes : 25€/pers ; plus de 10 personnes : 20€/pers." 
-            : "In kayak or paddle surf. Route around the castle, caves, snorkeling, and Pope Luna storytelling. Groups of more than 4 people: €25/pers; more than 10 people: €20/pers.",
+            ? "En kayak ou paddle surf. Randonnée autour du château, grottes, snorkel et arrêt didactique sur l'histoire de Pape Luna. Prix unique : 30€/pers. Groupes de 10 ou plus : 25€/pers." 
+            : "In kayak or paddle surf. Route around the castle, caves, snorkeling, and Pope Luna storytelling. Single price: €30/pers. Groups of 10 or more: €25/pers.",
           icon: <Compass className="w-8 h-8 text-brand-cyan" />,
           cta: p.ctaBook
         }
@@ -826,6 +826,19 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
             </p>
           </motion.div>
 
+          {/* Render interactive SUP pack configurator only for paddle surf - moved above the regular grid to highlight it */}
+          {sportKey === "paddle" && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="mb-12"
+            >
+              <SupPackConfigurator lang={lang} />
+            </motion.div>
+          )}
+
           <div className={`grid grid-cols-1 gap-8 mx-auto ${rates.length === 1 ? 'max-w-md' : rates.length === 2 ? 'lg:grid-cols-2 max-w-4xl' : 'lg:grid-cols-3 max-w-6xl'}`}>
             {rates.map((rate, i) => (
               <motion.div
@@ -879,18 +892,6 @@ export default function ServiceLandingLayout({ lang, sportKey }: ServiceLandingL
               </motion.div>
             ))}
           </div>
-
-          {/* Render interactive SUP pack configurator only for paddle surf */}
-          {sportKey === "paddle" && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <SupPackConfigurator lang={lang} />
-            </motion.div>
-          )}
         </div>
       </section>
 
