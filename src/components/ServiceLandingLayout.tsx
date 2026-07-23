@@ -481,6 +481,14 @@ const getRatesDetails = (key: string, lang: Language, p: Record<string, string>)
           icon: <Zap className="w-8 h-8 text-brand-cyan animate-pulse" />,
           cta: p.ctaBook,
           popular: true
+        },
+        {
+          title: p.rentalDouble,
+          price: p.rentalDoublePrice,
+          duration: "20 min",
+          desc: isEs ? "Sesión compartida ideal para parejas o amigos. Ambos volaréis con turnos consecutivos. Incluye briefing y equipamiento para ambos." : isFr ? "Session partagée idéale pour les couples ou les amis. Vous volerez tous les deux à tour de rôle. Comprend le briefing et l'équipement pour les deux." : "Shared session ideal for couples or friends. Both of you will fly in consecutive turns. Includes briefing and gear for both.",
+          icon: <Users className="w-8 h-8 text-brand-cyan" />,
+          cta: p.ctaBook
         }
       ];
     case 'jetski':
