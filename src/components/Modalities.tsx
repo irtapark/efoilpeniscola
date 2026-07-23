@@ -10,7 +10,7 @@ const Modalities = () => {
   const plans = [
     {
       title: t.rates.solo.title,
-      price: "75€",
+      price: "95€",
       duration: t.rates.solo.duration,
       description: t.rates.solo.desc,
       icon: <Wind size={32} className="md:w-11 md:h-11" />,
@@ -26,7 +26,7 @@ const Modalities = () => {
     },
     {
       title: t.rates.duo.title,
-      price: "50€",
+      price: "60€",
       duration: t.rates.duo.duration,
       description: t.rates.duo.desc,
       icon: <Waves size={32} className="md:w-11 md:h-11" />,
