@@ -42,7 +42,7 @@ const Modalities = () => {
     },
     {
       title: t.rates.pro.title,
-      price: "230€",
+      price: "450€",
       duration: t.rates.pro.duration,
       description: t.rates.pro.desc,
       icon: <Gauge size={32} className="md:w-11 md:h-11" />,
